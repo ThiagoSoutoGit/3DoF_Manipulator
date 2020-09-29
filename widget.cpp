@@ -835,29 +835,6 @@ void Widget::on_btn_Inverse_Kinematics_clicked()
     Theta3_data.append(QString::number(theta_3_angle));
     ui->data_to_be_sent_textEdit->append(Theta3_data);
 
-
-
-
-
-
-    //Graphic
-
-
-//    series->append(0, 0);
-//    series->append(T01(0, 3), T01(2, 3));
-//    series->append(T12(0, 3), T12(2, 3));
-//    series->append(T23(0, 3), T23(2, 3));
-//    series->append(T34(0, 3), T34(2, 3));
-//    series->append(T45(0, 3), T45(2, 3));
-
-//    *series << QPointF(0, 0) << QPointF(T01(0, 3), T01(2, 3)) << QPointF(T12(0, 3), T12(2, 3)) << QPointF(T23(0, 3), T23(2, 3)) <<
-//               QPointF(T34(0, 3), T34(2, 3)) << QPointF(T45(0, 3), T45(2, 3));
-
-
-
-
-
-
 }
 
 
@@ -927,6 +904,7 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
     printMatrix(t_3_4_matrix);
 
+
     t_0_2_matrix = t_0_1_matrix * t_1_2_matrix;
 
     tx02 = t_0_2_matrix(0, 3);
@@ -936,6 +914,7 @@ void Widget::on_btn_Forward_Kinematics_clicked()
     ui->matrixTextEdit->appendPlainText("\nT02 Matrix: \n");
 
     printMatrix(t_0_2_matrix);
+
 
     t_0_3_matrix = t_0_1_matrix * t_1_2_matrix * t_2_3_matrix;
 
@@ -947,16 +926,17 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
     printMatrix(t_0_3_matrix);
 
-    std::cout << std::endl <<  "T:" << std::endl << std::endl;;
 
-    ui->matrixTextEdit->appendPlainText("\nT Matrix: \n");
     T = t_0_1_matrix * t_1_2_matrix * t_2_3_matrix * t_3_4_matrix;
 
     Tx = T(0, 3);
     Ty = T(1, 3);
     Tz = T(2, 3);
 
-    std::cout <<  "T:" << std::endl << T.format(CleanFmt) << std::endl << std::endl;
+    ui->matrixTextEdit->appendPlainText("\nT Matrix: \n");
+
+    printMatrix(T);
+
 
     Pos_x = QString::number(T(0,3));
     ui->X_Pos->setText(Pos_x);
@@ -973,6 +953,8 @@ void Widget::on_btn_Forward_Kinematics_clicked()
     ui->Z_Pos->setText(Pos_z);
     ui->rotZSlider->setSliderPosition(ui->Theta_3->text().toInt());
 
+
+    //Sending Data
     ui->data_to_be_sent_textEdit->clear();
 
     QString data_to_be_sent;
@@ -987,10 +969,6 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
     ui->data_to_be_sent_textEdit->append(data_to_be_sent);
 
-
-    ui->matrixTextEdit->appendPlainText("T Matrix: \n");
-
-    printMatrix(T);
 
     drawChart();
 }

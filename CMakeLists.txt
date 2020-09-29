@@ -46,6 +46,7 @@ if(ANDROID)
     myglwidget.h
     Serial.cpp
     Serial.h
+    README.md
 
   )
 else()
@@ -58,6 +59,7 @@ else()
     myglwidget.h
     Serial.cpp
     Serial.h
+    README.md
 
 
   )
