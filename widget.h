@@ -131,5 +131,8 @@ private slots:
     void on_L_1_textChanged(const QString &arg1);
     void on_L_2_textChanged(const QString &arg1);
     void on_L_3_textChanged(const QString &arg1);
+//    void on_X_Pos_textChanged(const QString &arg1);
+//    void on_Y_Pos_textChanged(const QString &arg1);
+//    void on_Z_Pos_textChanged(const QString &arg1);
 };
 #endif // WIDGET_H
