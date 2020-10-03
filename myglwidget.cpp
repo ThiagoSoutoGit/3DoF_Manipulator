@@ -1,18 +1,5 @@
 #include "myglwidget.h"
 
-
-//MyGLWidget::MyGLWidget(QWidget* parent):
-//    QOpenGLWidget(parent)
-//{
-//    QSurfaceFormat format;
-//    format.setDepthBufferSize(24);
-//    format.setStencilBufferSize(8);
-//    format.setVersion(3, 2);
-//    format.setProfile(QSurfaceFormat::CoreProfile);
-//    QSurfaceFormat::setDefaultFormat(format);
-
-//}
-
 MyGLWidget::MyGLWidget(QWidget* parent):
     QOpenGLWidget(parent)
 {
@@ -83,14 +70,9 @@ void MyGLWidget::initializeGL()
 {
     //This is compulsory
     this->initializeOpenGLFunctions();
-//    glEnable(GL_DEPTH_TEST);
     glEnable(GL_CULL_FACE);
     glShadeModel(GL_SMOOTH);
-//    glEnable(GL_LIGHTING);
-//    glEnable(GL_LIGHT0);
 
-//    static GLfloat lightPosition[4] = { 0, 0, 10, 1.0 };
-//    glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
 }
 
 
@@ -158,8 +140,6 @@ void MyGLWidget::mouseMoveEvent(QMouseEvent *event)
 
     lastPos = event->pos();
 }
-
-
 
 
 void MyGLWidget::draw()

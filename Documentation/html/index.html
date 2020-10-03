@@ -90,11 +90,16 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p><a class="anchor" id="md_README"></a> </p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Description</h1>
-<p>3Dof Manipulator kinematics using QT with Cmake, Qchart and OpenGL.</p>
+<p>This program calculates the Forward and Inverse Kinematics of a 3Dof Manipulator using QT with Cmake and QChart. It's able to generate the path to write the number 19044686, to complete this operation follow the steps:</p>
+<ol type="1">
+<li>Click the "Write Number" button on the kinematics tab to generate the coordinates using the inverse kinematics.</li>
+<li>Click the "Draw Number" button to generate the graphics. The graphics will be displayed at the Graphics tab.</li>
+</ol>
+<p>The OpenGL was not fully implemented, since its not subject of this assignment. It will be implemented in the future to simulate the solidworks parts.</p>
 <h1><a class="anchor" id="autotoc_md2"></a>
 libraries</h1>
 <p>The Eigen library is imported directly from the folder, no CMake required.</p>
-<p>Qt5::Charts and Qt5::SerialPort as well as ${OPENGL_LIBRARIES} are imported from the CMake file. </p>
+<p>Qt5::Charts and Qt5::SerialPort as well as ${OPENGL_LIBRARIES} are imported at the CMake file. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

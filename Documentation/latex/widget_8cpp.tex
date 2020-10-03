@@ -7,8 +7,7 @@
 {\ttfamily \#include $<$iostream$>$}\newline
 {\ttfamily \#include $<$cmath$>$}\newline
 {\ttfamily \#include \char`\"{}C\+:/eigen/\+Eigen/\+Dense\char`\"{}}\newline
-Include dependency graph for widget.\+cpp\+:
-\nopagebreak
+Include dependency graph for widget.\+cpp\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,15 +18,15 @@ Include dependency graph for widget.\+cpp\+:
 \begin{DoxyCompactItemize}
 \item 
 Matrix4d \mbox{\hyperlink{widget_8cpp_ad94f7e261df4d8c4ec27d91f4c31a754}{rot\+\_\+x}} (double alpha)
-\item 
+\begin{DoxyCompactList}\small\item\em rot\+\_\+x calculates the rotation matrix on the X axis given an \char`\"{}alpha\char`\"{} angle. \end{DoxyCompactList}\item 
 Matrix4d \mbox{\hyperlink{widget_8cpp_a29a7fe5a7a78553121b5127b3944263e}{trans\+\_\+x}} (double a)
-\item 
+\begin{DoxyCompactList}\small\item\em trans\+\_\+x calculates the translation matrix on the X axis given an \char`\"{}a\char`\"{} number. \end{DoxyCompactList}\item 
 Matrix4d \mbox{\hyperlink{widget_8cpp_af82782d29abfebef20fcd7a9e76d130d}{rot\+\_\+z}} (double theta)
-\item 
+\begin{DoxyCompactList}\small\item\em rot\+\_\+z calculates the rotation matrix on the X axis given an \char`\"{}theta\char`\"{} angle. \end{DoxyCompactList}\item 
 Matrix4d \mbox{\hyperlink{widget_8cpp_a15df1a1c08d80d79cd36363d858971c1}{trans\+\_\+z}} (double d)
-\item 
+\begin{DoxyCompactList}\small\item\em trans\+\_\+z calculates the translation matrix on the X axis given an \char`\"{}d\char`\"{} number. \end{DoxyCompactList}\item 
 Matrix4d \mbox{\hyperlink{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1}{h\+\_\+T}} (double alpha, double a, double theta, double d)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em h\+\_\+T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respective matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Function Documentation}
@@ -39,18 +38,34 @@ Matrix4d \mbox{\hyperlink{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1}{h\+\_\+
 
 
 
-Definition at line 118 of file widget.\+cpp.
+h\+\_\+T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respective matrices. 
 
-Here is the call graph for this function\+:
-\nopagebreak
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & \\
+\hline
+{\em a} & \\
+\hline
+{\em theta} & \\
+\hline
+{\em d} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 123 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=197pt]{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1_cgraph}
 \end{center}
 \end{figure}
-Here is the caller graph for this function\+:
-\nopagebreak
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -65,10 +80,21 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 82 of file widget.\+cpp.
+rot\+\_\+x calculates the rotation matrix on the X axis given an \char`\"{}alpha\char`\"{} angle. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 60 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -83,10 +109,21 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 100 of file widget.\+cpp.
+rot\+\_\+z calculates the rotation matrix on the X axis given an \char`\"{}theta\char`\"{} angle. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 90 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -101,10 +138,21 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 91 of file widget.\+cpp.
+trans\+\_\+x calculates the translation matrix on the X axis given an \char`\"{}a\char`\"{} number. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 75 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -119,10 +167,21 @@ Here is the caller graph for this function\+:
 
 
 
-Definition at line 109 of file widget.\+cpp.
+trans\+\_\+z calculates the translation matrix on the X axis given an \char`\"{}d\char`\"{} number. 
 
-Here is the caller graph for this function\+:
-\nopagebreak
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 105 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

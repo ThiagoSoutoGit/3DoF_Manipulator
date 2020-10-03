@@ -6,7 +6,6 @@ Serial::Serial(QWidget *parent) : QWidget(parent)
 
     serialPort = new QSerialPort();
 
-//    QObject::connect(serialPort, SIGNAL(bytesWritten(qint64)), this, SLOT(slot_messageWritten(Ui::Widget *ui)));
     QObject::connect(serialPort, SIGNAL(bytesWritten(qint64)), this, SLOT(slot_messageWritten()));
 
 }
@@ -45,17 +44,13 @@ void Serial::write(Ui::Widget *ui, const QString &message)
     communication.append("Bytes written: " + message);
     ui->communication_textEdit->append(communication + "\n");
 
-
-
 }
 
 
-//void Serial::slot_messageWritten(Ui::Widget *ui)
 void Serial::slot_messageWritten()
 
 {
     std::cout << "Serial Port closed!" << std::endl;
-//    ui->communication_textEdit->append("Serial Port closed!");
 
     serialPort->close();
 

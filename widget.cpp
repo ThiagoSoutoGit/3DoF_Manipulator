@@ -6,7 +6,6 @@
 #include <cmath>
 
 
-
 QT_CHARTS_USE_NAMESPACE
 
 using namespace Eigen;
@@ -19,30 +18,14 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    C_Position = QPoint(-730, 200);
-//    QString C_Position_String = QString::number(C_Position);
-    ui->cursorPosition_Label->setText("(" + QString::number(C_Position.x()) + "," + QString::number(C_Position.y()) + ")");
-
-
-    //Connect Opengl to the Sliders
-//    connect(ui->openGLWidget, SIGNAL(xRotationChanged(int)), ui->rotXSlider, SLOT(setValue(int)));
-//    connect(ui->openGLWidget, SIGNAL(yRotationChanged(int)), ui->rotYSlider, SLOT(setValue(int)));
-//    connect(ui->openGLWidget, SIGNAL(zRotationChanged(int)), ui->rotZSlider, SLOT(setValue(int)));
-
-
-    //    QObject::connect(chart->scene(), &QGraphicsScene::changed,
-    //                         &series, &Series::handleSceneChanged);
-
-
-//    connect(ui->rotXSlider, SIGNAL(dataChanged()), ui->chartFrame, SLOT(repaint()));
-//    connect(ui->rotYSlider, SIGNAL(dataChanged()), ui->chartFrame, SLOT(update()));
-//    connect(ui->rotZSlider, SIGNAL(dataChanged()), ui->chartFrame, SLOT(update()));
-
-
 
     // Defining intial values for the fields
 
-    //Project robot arm
+    C_Position = QPoint(-730, 200);
+    ui->cursorPosition_Label->setText("(" + QString::number(C_Position.x()) + "," + QString::number(C_Position.y()) + ")");    
+
+    ui->numberEdit->setText("19044686");
+
     ui->L_1->setText("230");
     ui->L_2->setText("500");
     ui->L_3->setText("500");
@@ -51,20 +34,16 @@ Widget::Widget(QWidget *parent)
     ui->Theta_2->setText("-10");
     ui->Theta_3->setText("50");
 
-
-
     ui->X_Pos->setText("-730");
     ui->Y_Pos->setText("-620");
     ui->Z_Pos->setText("200");
 
     on_btn_Inverse_Kinematics_clicked();
-
     on_btn_Forward_Kinematics_clicked();
 
-
     ui->matrixTextEdit->clear();
-
 }
+
 
 Widget::~Widget()
 {
@@ -73,12 +52,11 @@ Widget::~Widget()
 }
 
 
-
-
-
-
-
-
+/*!
+ * \brief rot_x calculates the rotation matrix on the X axis given an "alpha" angle.
+ * \param alpha
+ * \return
+ */
 Matrix4d rot_x(double alpha){
     Matrix4d T;
     T << 1, 0, 0, 0,
@@ -88,6 +66,12 @@ Matrix4d rot_x(double alpha){
     return T;
 }
 
+
+/*!
+ * \brief trans_x calculates the translation matrix on the X axis given an "a" number.
+ * \param a
+ * \return
+ */
 Matrix4d trans_x(double a){
     Matrix4d T;
     T << 1, 0, 0, a,
@@ -97,6 +81,12 @@ Matrix4d trans_x(double a){
     return T;
 }
 
+
+/*!
+ * \brief rot_z calculates the rotation matrix on the X axis given an "theta" angle.
+ * \param theta
+ * \return
+ */
 Matrix4d rot_z(double theta){
     Matrix4d T;
     T << cos(theta), -sin(theta), 0, 0,
@@ -106,6 +96,12 @@ Matrix4d rot_z(double theta){
     return T;
 }
 
+
+/*!
+ * \brief trans_z calculates the translation matrix on the X axis given an "d" number.
+ * \param d
+ * \return
+ */
 Matrix4d trans_z(double d){
     Matrix4d T;
     T << 1, 0, 0, 0,
@@ -115,6 +111,15 @@ Matrix4d trans_z(double d){
     return T;
 }
 
+
+/*!
+ * \brief h_T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respective matrices.
+ * \param alpha
+ * \param a
+ * \param theta
+ * \param d
+ * \return
+ */
 Matrix4d h_T(double alpha, double a, double theta, double d){
     Matrix4d T;
     T = rot_x(alpha) * trans_x(a) * rot_z(theta) * trans_z(d);
@@ -122,6 +127,9 @@ Matrix4d h_T(double alpha, double a, double theta, double d){
 }
 
 
+/*!
+ * \brief Widget::on_btn_Inverse_Kinematics_clicked calculates the Inverse Kinematics using the values of X, Y, Z positions and the L1, L2, and L3 link lengths; and fill the Theta 1, Theta 2 and Theta 3 Line Edits.
+ */
 void Widget::on_btn_Inverse_Kinematics_clicked()
 {
     //Theta 1
@@ -144,8 +152,6 @@ void Widget::on_btn_Inverse_Kinematics_clicked()
     if(x3<0){
         ui->Theta_1->setText(QString::number((theta_1 * 180/M_PI)+180));
     } else ui->Theta_1->setText(QString::number(theta_1 * 180/M_PI));
-
-
 
     //Theta 2
 
@@ -175,6 +181,9 @@ void Widget::on_btn_Inverse_Kinematics_clicked()
 }
 
 
+/*!
+ * \brief Widget::on_btn_Forward_Kinematics_clicked calculates the Forward Kinematics based on the values of Theta 1, Theta 2 and Theta 3 Line Edits and the L1, L2, and L3 link lengths; and fill the X, Y, Z positions Line Edits. After Generating all the matrices It draws the manipulator on the Graphics tab.
+ */
 void Widget::on_btn_Forward_Kinematics_clicked()
 {
     ui->matrixTextEdit->clear();
@@ -195,7 +204,6 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
     double alpha_1 = (90 * M_PI/180);
     t_0_1_matrix = h_T(0, 0, theta_1_value, l_1_value);
-    std::cout << "Matrix T01:" << std::endl << t_0_1_matrix.format(CleanFmt) << std::endl << std::endl;
 
     tx01 = t_0_1_matrix(0, 3);
     ty01 = t_0_1_matrix(1, 3);
@@ -207,7 +215,6 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
 
     t_1_2_matrix = h_T(alpha_1, 0, theta_2_value, 0);
-    std::cout << "Matrix T12:" << std::endl << t_0_1_matrix.format(CleanFmt) << std::endl << std::endl;
 
     tx12 = t_1_2_matrix(0, 3);
     ty12 = t_1_2_matrix(1, 3);
@@ -219,7 +226,6 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
 
     t_2_3_matrix = h_T(0, l_2_value, theta_3_value, 0);
-    std::cout << "Matrix T12:" << std::endl << t_0_1_matrix.format(CleanFmt) << std::endl << std::endl;
 
     tx23 = t_2_3_matrix(0, 3);
     ty23 = t_2_3_matrix(1, 3);
@@ -231,7 +237,6 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
 
     t_3_4_matrix = h_T(0, l_3_value, 0, 0);
-    std::cout << "Matrix T12:" << std::endl << t_3_4_matrix.format(CleanFmt) << std::endl << std::endl;
 
     tx34 = t_3_4_matrix(0, 3);
     ty34 = t_3_4_matrix(1, 3);
@@ -290,26 +295,13 @@ void Widget::on_btn_Forward_Kinematics_clicked()
     ui->Z_Pos->setText(Pos_z);
     ui->rotZSlider->setSliderPosition(ui->Theta_3->text().toInt());
 
-
-    //Sending Data
-    ui->data_to_be_sent_textEdit->clear();
-
-    QString data_to_be_sent;
-    data_to_be_sent.append("Position (x,y,z): (");
-    data_to_be_sent.append(Pos_x);
-    data_to_be_sent.append(" ,");
-    data_to_be_sent.append(Pos_y);
-    data_to_be_sent.append(" ,");
-    data_to_be_sent.append(Pos_z);
-    data_to_be_sent.append(")");
-
-
-    ui->data_to_be_sent_textEdit->append(data_to_be_sent);
     drawChart();
-
-
 }
 
+
+/*!
+ * \brief Widget::drawChart draw the Graphic based on the transformation matrices.
+ */
 void Widget::drawChart()
 {
     QLineSeries *series = new QLineSeries();
@@ -320,8 +312,6 @@ void Widget::drawChart()
                QPointF((int)Tx, (int)Tz);
     series->setPointsVisible();
 
-
-//    QChart *chart = new QChart();
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
@@ -352,6 +342,11 @@ void Widget::drawChart()
 
 }
 
+
+/*!
+ * \brief Widget::printMatrix prints the matrices on the Text edits fields.
+ * \param M
+ */
 void Widget::printMatrix(Matrix4d M)
 {
     for(int i = 0; i <= 3 ; ++i){
@@ -368,17 +363,38 @@ void Widget::printMatrix(Matrix4d M)
 }
 
 
+/*!
+ * \brief Widget::on_send_instructions_pushButton_clicked send the instructions via Serial Port to the microcontroller.
+ */
 void Widget::on_send_instructions_pushButton_clicked()
 {
+    for(auto i : Write){
 
-    Serial *s = new Serial();
+        ui->X_Pos->setText(QString::number(i.x()));
+        ui->Z_Pos->setText(QString::number(i.y()));
+        on_btn_Inverse_Kinematics_clicked();
 
-    s->open(ui, "COM7");
+        QString message;
 
-    s->write(ui, "Hello world!");
+        message.append("(" + ui->Theta_1->text() + ", " + ui->Theta_2->text() + ", " + ui->Theta_3->text() + ")");
 
+        QString data_to_be_sent;
+        data_to_be_sent.append("Position (x,y,z):" + message);
+        ui->data_to_be_sent_textEdit->append(data_to_be_sent);
+
+        Serial *s = new Serial();
+
+        s->open(ui, "COM7");
+
+        s->write(ui, message);
+    }
 }
 
+
+/*!
+ * \brief Widget::on_rotXSlider_sliderMoved connects Theta 1 value to the Slider.
+ * \param position
+ */
 void Widget::on_rotXSlider_sliderMoved(int position)
 {
     QString Theta1Slider = QString::number(position);
@@ -386,11 +402,13 @@ void Widget::on_rotXSlider_sliderMoved(int position)
     Widget::update();
 
     on_btn_Forward_Kinematics_clicked();
-//    on_btn_Inverse_Kinematics_clicked();
-//    emit dataChanged();
-
 }
 
+
+/*!
+ * \brief Widget::on_rotYSlider_sliderMoved connects Theta 2 value to the Slider.
+ * \param position
+ */
 void Widget::on_rotYSlider_sliderMoved(int position)
 {
 
@@ -398,78 +416,25 @@ void Widget::on_rotYSlider_sliderMoved(int position)
    ui->Theta_2->setText(Theta2Slider);
 
    on_btn_Forward_Kinematics_clicked();
-//    on_btn_Inverse_Kinematics_clicked();
-//    emit dataChanged();
 }
 
+
+/*!
+ * \brief Widget::on_rotZSlider_sliderMoved connects Theta 3 value to the Slider.
+ * \param position
+ */
 void Widget::on_rotZSlider_sliderMoved(int position)
 {
     QString Theta3Slider = QString::number(position);
     ui->Theta_3->setText(Theta3Slider);
 
     on_btn_Forward_Kinematics_clicked();
-//    on_btn_Inverse_Kinematics_clicked();
-//    emit dataChanged();
 }
 
 
-
-//void Widget::on_Theta_1_textChanged(const QString &arg1)
-//{
-//    on_btn_Forward_Kinematics_clicked();
-//}
-
-//void Widget::on_Theta_2_textChanged(const QString &arg1)
-//{
-//    on_btn_Forward_Kinematics_clicked();
-//}
-
-//void Widget::on_Theta_3_textChanged(const QString &arg1)
-//{
-//    on_btn_Forward_Kinematics_clicked();
-//}
-
-//void Widget::on_L_1_textChanged(const QString &arg1)
-//{
-//    on_btn_Forward_Kinematics_clicked();
-//}
-
-//void Widget::on_L_2_textChanged(const QString &arg1)
-//{
-//    on_btn_Forward_Kinematics_clicked();
-//}
-
-//void Widget::on_L_3_textChanged(const QString &arg1)
-//{
-//    on_btn_Forward_Kinematics_clicked();
-//}
-
-//void Widget::on_X_Pos_textChanged(const QString &arg1)
-//{
-//    on_btn_Inverse_Kinematics_clicked();
-//}
-
-//void Widget::on_Y_Pos_textChanged(const QString &arg1)
-//{
-//    on_btn_Inverse_Kinematics_clicked();
-//}
-
-//void Widget::on_Z_Pos_textChanged(const QString &arg1)
-//{
-//    on_btn_Inverse_Kinematics_clicked();
-//}
-
-//using point_vector_t = std::vector<Widget::PointXYZ>;
-
-
-//points.emplace_back(PointXYZ {-619, -619, 464});
-
-
-//initial point : -619, -619, 464
-
-//line function y=mx+b
-//MatrixXd - Capital X means the size of the matrix in unknown and d is the type, double;
-
+/*!
+ * \brief Widget::f0 draws a 0 using the vector "Write" with the manipulator coordinates.
+ */
 void Widget::f0() {
 
     C_Position_Begining = C_Position;
@@ -481,8 +446,6 @@ void Widget::f0() {
         Write.insert(Write.end(), QPoint(x1, y1));
         y1 = y1 + 6;
     }
-
-    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
 
     for (int i=0; i<= 22; i++){
         Write.insert(Write.end(), QPoint(x1, y1));
@@ -503,6 +466,11 @@ void Widget::f0() {
     C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
 }
 
+
+
+/*!
+ * \brief Widget::f1 draws a 1 using the vector "Write" with the manipulator coordinates.
+ */
 void Widget::f1() {
 
 
@@ -517,6 +485,11 @@ void Widget::f1() {
     C_Position = QPoint((C_Position.x() + 210), C_Position.y());
 }
 
+
+
+/*!
+ * \brief Widget::f4 draws a 4 using the vector "Write" with the manipulator coordinates.
+ */
 void Widget::f4() {
 
     C_Position_Begining = C_Position;
@@ -528,8 +501,6 @@ void Widget::f4() {
         Write.insert(Write.end(), QPoint(x1, y1));
         y1 = y1 + 6;
     }
-
-    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
 
     C_Position = QPoint((C_Position.x()), C_Position.y()+135);
 
@@ -550,6 +521,9 @@ void Widget::f4() {
 }
 
 
+/*!
+ * \brief Widget::f6 draws a 6 using the vector "Write" with the manipulator coordinates.
+ */
 void Widget::f6() {
 
     C_Position_Begining = C_Position;
@@ -561,8 +535,6 @@ void Widget::f6() {
         Write.insert(Write.end(), QPoint(x1, y1));
         y1 = y1 + 6;
     }
-
-    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
 
     for (int i=0; i<= 22; i++){
         Write.insert(Write.end(), QPoint(x1, y1));
@@ -588,6 +560,10 @@ void Widget::f6() {
     C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
 }
 
+
+/*!
+ * \brief Widget::f8 draws a 8 using the vector "Write" with the manipulator coordinates.
+ */
 void Widget::f8() {
 
     C_Position_Begining = C_Position;
@@ -599,8 +575,6 @@ void Widget::f8() {
         Write.insert(Write.end(), QPoint(x1, y1));
         y1 = y1 + 6;
     }
-
-    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
 
     for (int i=0; i<= 22; i++){
         Write.insert(Write.end(), QPoint(x1, y1));
@@ -630,6 +604,10 @@ void Widget::f8() {
     C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
 }
 
+
+/*!
+ * \brief Widget::f9 draws a 9 using the vector "Write" with the manipulator coordinates.
+ */
 void Widget::f9() {
 
     C_Position_Begining = C_Position;
@@ -641,8 +619,6 @@ void Widget::f9() {
         Write.insert(Write.end(), QPoint(x1, y1));
         y1 = y1 + 6;
     }
-
-    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
 
     C_Position = QPoint((C_Position.x()), C_Position.y()+135);
 
@@ -668,47 +644,37 @@ void Widget::f9() {
 }
 
 
-
-//    if(x1!=x2){
-//        for (int i=0; x1<=x2; i++){
-//            Line[i] = QPoint(x1, y1);
-//            x1 = x1 + ((x1+x2)/increment);
-//        }
-//    } else {
-//        for (int i=0; y1<=y2; i++){
-//            Line[i] = QPoint(x1, y1);
-//            y1 = y1 + ((x1+x2)/increment);
-//        }
-//    }
-
-
+/*!
+ * \brief Widget::readNumber Reads the number to be drawn and call the draw functions.
+ */
 void Widget::readNumber()
 {
     std::string Parse = ui->numberEdit->text().toStdString();
 
     f1();
-    f9();
-    f0();
-    f4();
-    f4();
-    f6();
-    f8();
-    f6();
+//    f9();
+//    f0();
+//    f4();
+//    f4();
+//    f6();
+//    f8();
+//    f6();
 }
 
 
+/*!
+ * \brief Widget::on_WriteNumber_PushButton_clicked calls the Readnumber function and writ the "Write" vector the the console.
+ */
 void Widget::on_WriteNumber_PushButton_clicked()
 {
     readNumber();
-//    std::vector<QPoint> Write_for_Print = Write;
-//    int size = Write_for_Print.size();
-//    for(int i=0; i<=size; i++){
-//        ui->writeTextEdit->setText(QString::number(Write_for_Print[i].x()));
-//    }
-//    ui->writeTextEdit->setText(QString::number(Write[0].x()));
     qDebug() << Write;
 }
 
+
+/*!
+ * \brief Widget::on_DrawNumber_pushButton_clicked draws a line using the coordinates to clarify the result.
+ */
 void Widget::on_DrawNumber_pushButton_clicked()
 {
     ui->writeTextEdit->setText("Start Drawing");

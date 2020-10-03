@@ -9,7 +9,6 @@ using namespace Eigen;
 #include <QOpenGLFunctions>
 #include <QSurfaceFormat>
 
-
 #include <vector>
 #include <numeric>
 
@@ -22,11 +21,6 @@ using namespace Eigen;
 #include <iostream>
 #include <cstdio>
 #include <string>
-
-
-
-
-
 
 
 QT_BEGIN_NAMESPACE
@@ -51,12 +45,9 @@ public:
     double theta_2_value;
     double theta_3_value;
 
-
     double l_1_value;
     double l_2_value;
     double l_3_value;
-
-
 
     Matrix4d t_0_1_matrix;
     Matrix4d t_1_2_matrix;
@@ -66,8 +57,6 @@ public:
     Matrix4d t_0_3_matrix;
 
     Matrix4d t_0_2_matrix;
-    void readNumber();
-
 
     Matrix4d t_1_5_matrix;
     Matrix4d t_1_4_matrix;
@@ -80,7 +69,6 @@ public:
     QString value;
     QPoint C_Position;
     QPoint C_Position_Begining;
-
 
     int tx01;
     int tx12;
@@ -115,14 +103,7 @@ public:
 
     std::vector<QPoint> Write;
 
-
-
-
-
-
-
-
-
+    void readNumber();
 
     void drawChart();
     void printMatrix(Matrix4d M);
@@ -133,12 +114,6 @@ public:
     void f6();
     void f8();
     void f9();
-
-
-//    QLineSeries *series = new QLineSeries();
-
-    // If the new chart is created only once here the series will be stacking (good for reach area determination)
-//    QChart *chart = new QChart();
 
 
 public slots:
@@ -161,15 +136,7 @@ signals:
     void dataChanged();
 
 private slots:
-//    void on_Theta_1_textChanged(const QString &arg1);
-//    void on_Theta_2_textChanged(const QString &arg1);
-//    void on_Theta_3_textChanged(const QString &arg1);
-//    void on_L_1_textChanged(const QString &arg1);
-//    void on_L_2_textChanged(const QString &arg1);
-//    void on_L_3_textChanged(const QString &arg1);
-//    void on_X_Pos_textChanged(const QString &arg1);
-//    void on_Y_Pos_textChanged(const QString &arg1);
-//    void on_Z_Pos_textChanged(const QString &arg1);
+
     void on_WriteNumber_PushButton_clicked();
     void on_DrawNumber_pushButton_clicked();
 };

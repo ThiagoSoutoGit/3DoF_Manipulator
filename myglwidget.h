@@ -8,17 +8,6 @@
 
 #include <QSurfaceFormat>
 
-
-
-
-//#include "widget.h"
-//#include "ui_widget.h"
-//#include <glm/mat4x4.hpp>
-
-//For mouse moviment:
-//https://www.bogotobogo.com/Qt/Qt5_OpenGL_QGLWidget.php
-
-
 #include <QWidget>
 
 class MyGLWidget : public QOpenGLWidget, public QOpenGLFunctions/*, public QWidget*/
@@ -42,7 +31,6 @@ protected:
     void mousePressEvent(QMouseEvent *event);
     void mouseMoveEvent(QMouseEvent *event);
 
-//    void draw(Ui::Widget *ui);
     void draw();
 
 
