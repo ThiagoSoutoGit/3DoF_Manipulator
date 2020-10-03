@@ -1,0 +1,4 @@
+<map id="Widget::f8" name="Widget::f8">
+<area shape="rect" id="node1" title="Widget::f8 draws a 8 using the vector &quot;Write&quot; with the manipulator coordinates." alt="" coords="195,5,276,32"/>
+<area shape="rect" id="node2" href="$class_widget.html#a3fbfb10fd157677b9eeadb369b1be131" title="Widget::readNumber Reads the number to be drawn and call the draw functions." alt="" coords="5,5,147,32"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="Widget::on_rotXSlider_sliderMoved" name="Widget::on_rotXSlider_sliderMoved">
+<area shape="rect" id="node1" title="Widget::on_rotXSlider_sliderMoved connects Theta 1 value to the Slider." alt="" coords="5,74,152,115"/>
+<area shape="rect" id="node2" href="$class_widget.html#afd7258470c40aecd57dd9de126a88626" title="Widget::on_btn_Forward_Kinematics_clicked calculates the Forward Kinematics based on the values of Th..." alt="" coords="200,74,363,115"/>
+<area shape="rect" id="node3" href="$class_widget.html#a5ca4b127033cd1bf5757f070ed129f83" title="Widget::drawChart draw the Graphic based on the transformation matrices." alt="" coords="412,31,541,57"/>
+<area shape="rect" id="node4" href="$widget_8cpp.html#a70cc51f184a87f6bf5b3cf37aac67cc1" title="h_T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respecti..." alt="" coords="455,81,498,108"/>
+<area shape="rect" id="node9" href="$class_widget.html#a713c2424dd8eb67a883eb338d0bbc5cc" title="Widget::printMatrix prints the matrices on the Text edits fields." alt="" coords="411,132,543,159"/>
+<area shape="rect" id="node5" href="$widget_8cpp.html#ad94f7e261df4d8c4ec27d91f4c31a754" title="rot_x calculates the rotation matrix on the X axis given an &quot;alpha&quot; angle." alt="" coords="598,5,649,32"/>
+<area shape="rect" id="node6" href="$widget_8cpp.html#af82782d29abfebef20fcd7a9e76d130d" title="rot_z calculates the rotation matrix on the X axis given an &quot;theta&quot; angle." alt="" coords="598,56,649,83"/>
+<area shape="rect" id="node7" href="$widget_8cpp.html#a29a7fe5a7a78553121b5127b3944263e" title="trans_x calculates the translation matrix on the X axis given an &quot;a&quot; number." alt="" coords="591,107,656,133"/>
+<area shape="rect" id="node8" href="$widget_8cpp.html#a15df1a1c08d80d79cd36363d858971c1" title="trans_z calculates the translation matrix on the X axis given an &quot;d&quot; number." alt="" coords="591,157,656,184"/>
+</map>

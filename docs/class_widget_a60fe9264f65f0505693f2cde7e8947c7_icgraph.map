@@ -1,0 +1,5 @@
+<map id="Widget::on_btn_Inverse_Kinematics_clicked" name="Widget::on_btn_Inverse_Kinematics_clicked">
+<area shape="rect" id="node1" title="Widget::on_btn_Inverse_Kinematics_clicked calculates the Inverse Kinematics using the values of X,..." alt="" coords="248,35,405,76"/>
+<area shape="rect" id="node2" href="$class_widget.html#a25af1fb9cf3eea472935a4a416017e2a" title="Widget::on_send_instructions_pushButton_clicked send the instructions via Serial Port to the microcon..." alt="" coords="5,5,200,47"/>
+<area shape="rect" id="node3" href="$class_widget.html#ace1aa23652eb4425355a81760b39fd37" title=" " alt="" coords="47,71,159,98"/>
+</map>
