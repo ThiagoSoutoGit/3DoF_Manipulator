@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Widget</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_9">
+  <layout class="QVBoxLayout" name="verticalLayout_18">
    <item>
     <widget class="QTabWidget" name="btn_Forward">
      <property name="currentIndex">
@@ -29,7 +29,7 @@
       <attribute name="title">
        <string>Kinematics</string>
       </attribute>
-      <layout class="QHBoxLayout" name="horizontalLayout_20">
+      <layout class="QHBoxLayout" name="horizontalLayout_18">
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
@@ -239,90 +239,159 @@
         </layout>
        </item>
        <item>
-        <layout class="QVBoxLayout" name="verticalLayout_14">
+        <layout class="QVBoxLayout" name="verticalLayout_17">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_7">
+          <layout class="QVBoxLayout" name="verticalLayout_14">
            <item>
-            <widget class="QLabel" name="label_20">
-             <property name="text">
-              <string>Link Lengths</string>
-             </property>
-            </widget>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QLabel" name="label_20">
+               <property name="text">
+                <string>Link Lengths</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="verticalLayout_3">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>L 1</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="L_1">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_8">
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string>L 2</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="L_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="text">
+                    <string>L 3</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="L_3">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_10"/>
+               </item>
+              </layout>
+             </item>
+            </layout>
            </item>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QVBoxLayout" name="verticalLayout_9">
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <item>
-                <widget class="QLabel" name="label_5">
-                 <property name="text">
-                  <string>L 1</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="L_1">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Write Number</string>
+               </property>
+              </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_8">
-               <item>
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>L 2</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="L_2">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-              </layout>
+              <widget class="QLineEdit" name="numberEdit">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+              </widget>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_9">
-               <item>
-                <widget class="QLabel" name="label_7">
-                 <property name="text">
-                  <string>L 3</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="L_3">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_10"/>
+              <widget class="QPushButton" name="WriteNumber_PushButton">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="text">
+                <string>Write Number</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </item>
           </layout>
          </item>
          <item>
-          <spacer name="verticalSpacer">
+          <widget class="QLabel" name="label_16">
+           <property name="text">
+            <string>Cursor Position:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="cursorPosition_Label">
+           <property name="text">
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QTextEdit" name="writeTextEdit">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="DrawNumber_pushButton">
+           <property name="text">
+            <string>Draw Number</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_5">
            <property name="orientation">
             <enum>Qt::Vertical</enum>
            </property>

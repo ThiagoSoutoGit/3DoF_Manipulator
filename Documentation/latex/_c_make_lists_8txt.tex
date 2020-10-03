@@ -1,0 +1,32 @@
+\hypertarget{_c_make_lists_8txt}{}\doxysection{C\+Make\+Lists.\+txt File Reference}
+\label{_c_make_lists_8txt}\index{CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_c_make_lists_8txt_ad3ba75e03186fcfbbe7fac2fff7263dc}{cmake\+\_\+minimum\+\_\+required}} (V\+E\+R\+S\+I\+ON 3.\+5) project(Gripper L\+A\+N\+G\+U\+A\+G\+ES C\+XX) set(C\+M\+A\+K\+E\+\_\+\+I\+N\+C\+L\+U\+D\+E\+\_\+\+C\+U\+R\+R\+E\+N\+T\+\_\+\+D\+IR ON) set(C\+M\+A\+K\+E\+\_\+\+A\+U\+T\+O\+U\+IC ON) set(C\+M\+A\+K\+E\+\_\+\+A\+U\+T\+O\+M\+OC ON) set(C\+M\+A\+K\+E\+\_\+\+A\+U\+T\+O\+R\+CC ON) set(C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+S\+T\+A\+N\+D\+A\+RD 17) set(C\+M\+A\+K\+E\+\_\+\+C\+X\+X\+\_\+\+S\+T\+A\+N\+D\+A\+R\+D\+\_\+\+R\+E\+Q\+U\+I\+R\+ED ON)() \mbox{\hyperlink{_c_make_lists_8txt_ab5358e7d6d71f2e4ec3d64f261d349c7}{find\+\_\+package}}(QT N\+A\+M\+ES Qt6 Qt5 C\+O\+M\+P\+O\+N\+E\+N\+TS Widgets R\+E\+Q\+U\+I\+R\+ED) \mbox{\hyperlink{_c_make_lists_8txt_ab5358e7d6d71f2e4ec3d64f261d349c7}{find\+\_\+package}}(Qt\$
+\item 
+C\+O\+M\+P\+O\+N\+E\+N\+TS Widgets R\+E\+Q\+U\+I\+R\+ED \mbox{\hyperlink{_c_make_lists_8txt_ab5358e7d6d71f2e4ec3d64f261d349c7}{find\+\_\+package}} (Qt5\+Charts) find\+\_\+package(Qt5\+Open\+GL) find\+\_\+package(Open\+GL) find\+\_\+package(Qt5\+Serial\+Port) if(A\+N\+D\+R\+O\+ID) add\+\_\+library(Gripper S\+H\+A\+R\+ED main.\+cpp widget.\+cpp widget.\+h widget.\+ui myglwidget.\+cpp myglwidget.\+h Serial.\+cpp Serial.\+h R\+E\+A\+D\+M\+E.\+md) else() add\+\_\+executable(Gripper main.\+cpp widget.\+cpp widget.\+h widget.\+ui myglwidget.\+cpp myglwidget.\+h Serial.\+cpp Serial.\+h R\+E\+A\+D\+M\+E.\+md) endif() target\+\_\+link\+\_\+libraries(Gripper P\+R\+I\+V\+A\+TE Qt\$
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_c_make_lists_8txt_ad3ba75e03186fcfbbe7fac2fff7263dc}\label{_c_make_lists_8txt_ad3ba75e03186fcfbbe7fac2fff7263dc}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!cmake\_minimum\_required@{cmake\_minimum\_required}}
+\index{cmake\_minimum\_required@{cmake\_minimum\_required}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{cmake\_minimum\_required()}{cmake\_minimum\_required()}}
+{\footnotesize\ttfamily cmake\+\_\+minimum\+\_\+required (\begin{DoxyParamCaption}\item[{V\+E\+R\+S\+I\+ON 3.}]{5 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 1 of file C\+Make\+Lists.\+txt.
+
+\mbox{\Hypertarget{_c_make_lists_8txt_ab5358e7d6d71f2e4ec3d64f261d349c7}\label{_c_make_lists_8txt_ab5358e7d6d71f2e4ec3d64f261d349c7}} 
+\index{CMakeLists.txt@{CMakeLists.txt}!find\_package@{find\_package}}
+\index{find\_package@{find\_package}!CMakeLists.txt@{CMakeLists.txt}}
+\doxysubsubsection{\texorpdfstring{find\_package()}{find\_package()}}
+{\footnotesize\ttfamily C\+O\+M\+P\+O\+N\+E\+N\+TS Widgets R\+E\+Q\+U\+I\+R\+ED find\+\_\+package (\begin{DoxyParamCaption}\item[{Qt5\+Charts}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file C\+Make\+Lists.\+txt.
+

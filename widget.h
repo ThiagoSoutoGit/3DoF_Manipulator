@@ -6,13 +6,25 @@
 using namespace Eigen;
 
 #include <QOpenGLWidget>
+#include <QOpenGLFunctions>
+#include <QSurfaceFormat>
 
+
+#include <vector>
+#include <numeric>
 
 #include <QtCharts>
 #include <QChartView>
 #include <QLineSeries>
 #include "serial.h"
 #include "myglwidget.h"
+
+#include <iostream>
+#include <cstdio>
+#include <string>
+
+
+
 
 
 
@@ -21,7 +33,7 @@ QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
 QT_END_NAMESPACE
 
-class Widget : public QWidget
+class Widget : public QWidget, public QOpenGLFunctions
 {
     Q_OBJECT
 
@@ -32,6 +44,8 @@ public:
     ~Widget();
 
     Ui::Widget *ui;
+
+    QChart *chart = new QChart();
 
     double theta_1_value;
     double theta_2_value;
@@ -52,8 +66,7 @@ public:
     Matrix4d t_0_3_matrix;
 
     Matrix4d t_0_2_matrix;
-
-
+    void readNumber();
 
 
     Matrix4d t_1_5_matrix;
@@ -65,6 +78,8 @@ public:
     QString Pos_y;
     QString Pos_z;
     QString value;
+    QPoint C_Position;
+    QPoint C_Position_Begining;
 
 
     int tx01;
@@ -95,9 +110,30 @@ public:
     int Ty;
     int Tz;
 
+    float x1;
+    float y1;
+
+    std::vector<QPoint> Write;
+
+
+
+
+
+
+
+
+
 
     void drawChart();
     void printMatrix(Matrix4d M);
+
+    void f0();
+    void f1();
+    void f4();
+    void f6();
+    void f8();
+    void f9();
+
 
 //    QLineSeries *series = new QLineSeries();
 
@@ -125,14 +161,16 @@ signals:
     void dataChanged();
 
 private slots:
-    void on_Theta_1_textChanged(const QString &arg1);
-    void on_Theta_2_textChanged(const QString &arg1);
-    void on_Theta_3_textChanged(const QString &arg1);
-    void on_L_1_textChanged(const QString &arg1);
-    void on_L_2_textChanged(const QString &arg1);
-    void on_L_3_textChanged(const QString &arg1);
+//    void on_Theta_1_textChanged(const QString &arg1);
+//    void on_Theta_2_textChanged(const QString &arg1);
+//    void on_Theta_3_textChanged(const QString &arg1);
+//    void on_L_1_textChanged(const QString &arg1);
+//    void on_L_2_textChanged(const QString &arg1);
+//    void on_L_3_textChanged(const QString &arg1);
 //    void on_X_Pos_textChanged(const QString &arg1);
 //    void on_Y_Pos_textChanged(const QString &arg1);
 //    void on_Z_Pos_textChanged(const QString &arg1);
+    void on_WriteNumber_PushButton_clicked();
+    void on_DrawNumber_pushButton_clicked();
 };
 #endif // WIDGET_H

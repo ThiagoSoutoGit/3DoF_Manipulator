@@ -19,6 +19,10 @@ Widget::Widget(QWidget *parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
+    C_Position = QPoint(-730, 200);
+//    QString C_Position_String = QString::number(C_Position);
+    ui->cursorPosition_Label->setText("(" + QString::number(C_Position.x()) + "," + QString::number(C_Position.y()) + ")");
+
 
     //Connect Opengl to the Sliders
 //    connect(ui->openGLWidget, SIGNAL(xRotationChanged(int)), ui->rotXSlider, SLOT(setValue(int)));
@@ -43,9 +47,19 @@ Widget::Widget(QWidget *parent)
     ui->L_2->setText("500");
     ui->L_3->setText("500");
 
-    ui->Theta_1->setText("0");
-    ui->Theta_2->setText("0");
-    ui->Theta_3->setText("0");
+    ui->Theta_1->setText("225");
+    ui->Theta_2->setText("-10");
+    ui->Theta_3->setText("50");
+
+
+
+    ui->X_Pos->setText("-730");
+    ui->Y_Pos->setText("-620");
+    ui->Z_Pos->setText("200");
+
+    on_btn_Inverse_Kinematics_clicked();
+
+    on_btn_Forward_Kinematics_clicked();
 
 
     ui->matrixTextEdit->clear();
@@ -57,6 +71,11 @@ Widget::~Widget()
     delete ui;
 
 }
+
+
+
+
+
 
 
 
@@ -121,9 +140,11 @@ void Widget::on_btn_Inverse_Kinematics_clicked()
     //Theta 1
 
     theta_1 = atan(y3/x3);  //(1)
+    QString Theta1_data;
+    if(x3<0){
+        ui->Theta_1->setText(QString::number((theta_1 * 180/M_PI)+180));
+    } else ui->Theta_1->setText(QString::number(theta_1 * 180/M_PI));
 
-    QString Theta1_data = QString::number(theta_1 * 180/M_PI);
-    ui->Theta_1->setText(Theta1_data);
 
 
     //Theta 2
@@ -284,9 +305,9 @@ void Widget::on_btn_Forward_Kinematics_clicked()
 
 
     ui->data_to_be_sent_textEdit->append(data_to_be_sent);
-
-
     drawChart();
+
+
 }
 
 void Widget::drawChart()
@@ -300,7 +321,7 @@ void Widget::drawChart()
     series->setPointsVisible();
 
 
-    QChart *chart = new QChart();
+//    QChart *chart = new QChart();
     chart->legend()->hide();
     chart->addSeries(series);
     chart->createDefaultAxes();
@@ -313,7 +334,8 @@ void Widget::drawChart()
 
     QValueAxis *axisX = new QValueAxis;
     float range;
-    range = (ui->L_2->text().toFloat())+
+    range = (ui->L_1->text().toFloat())+
+            (ui->L_2->text().toFloat())+
             (ui->L_3->text().toFloat());
     axisX->setRange(-range, range);
     axisX->setTickCount(10);
@@ -392,35 +414,35 @@ void Widget::on_rotZSlider_sliderMoved(int position)
 
 
 
-void Widget::on_Theta_1_textChanged(const QString &arg1)
-{
-    on_btn_Forward_Kinematics_clicked();
-}
+//void Widget::on_Theta_1_textChanged(const QString &arg1)
+//{
+//    on_btn_Forward_Kinematics_clicked();
+//}
 
-void Widget::on_Theta_2_textChanged(const QString &arg1)
-{
-    on_btn_Forward_Kinematics_clicked();
-}
+//void Widget::on_Theta_2_textChanged(const QString &arg1)
+//{
+//    on_btn_Forward_Kinematics_clicked();
+//}
 
-void Widget::on_Theta_3_textChanged(const QString &arg1)
-{
-    on_btn_Forward_Kinematics_clicked();
-}
+//void Widget::on_Theta_3_textChanged(const QString &arg1)
+//{
+//    on_btn_Forward_Kinematics_clicked();
+//}
 
-void Widget::on_L_1_textChanged(const QString &arg1)
-{
-    on_btn_Forward_Kinematics_clicked();
-}
+//void Widget::on_L_1_textChanged(const QString &arg1)
+//{
+//    on_btn_Forward_Kinematics_clicked();
+//}
 
-void Widget::on_L_2_textChanged(const QString &arg1)
-{
-    on_btn_Forward_Kinematics_clicked();
-}
+//void Widget::on_L_2_textChanged(const QString &arg1)
+//{
+//    on_btn_Forward_Kinematics_clicked();
+//}
 
-void Widget::on_L_3_textChanged(const QString &arg1)
-{
-    on_btn_Forward_Kinematics_clicked();
-}
+//void Widget::on_L_3_textChanged(const QString &arg1)
+//{
+//    on_btn_Forward_Kinematics_clicked();
+//}
 
 //void Widget::on_X_Pos_textChanged(const QString &arg1)
 //{
@@ -437,3 +459,295 @@ void Widget::on_L_3_textChanged(const QString &arg1)
 //    on_btn_Inverse_Kinematics_clicked();
 //}
 
+//using point_vector_t = std::vector<Widget::PointXYZ>;
+
+
+//points.emplace_back(PointXYZ {-619, -619, 464});
+
+
+//initial point : -619, -619, 464
+
+//line function y=mx+b
+//MatrixXd - Capital X means the size of the matrix in unknown and d is the type, double;
+
+void Widget::f0() {
+
+    C_Position_Begining = C_Position;
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 - 6;
+    }
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 - 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 + 6;
+    }
+
+    qDebug() << Write;
+    C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
+}
+
+void Widget::f1() {
+
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+    qDebug() << Write;
+    C_Position = QPoint((C_Position.x() + 210), C_Position.y());
+}
+
+void Widget::f4() {
+
+    C_Position_Begining = C_Position;
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
+
+    C_Position = QPoint((C_Position.x()), C_Position.y()+135);
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 - 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    qDebug() << Write;
+    C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
+}
+
+
+void Widget::f6() {
+
+    C_Position_Begining = C_Position;
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 - 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    for (int i=0; i<= 44; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 - 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 + 6;
+    }
+
+    qDebug() << Write;
+    C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
+}
+
+void Widget::f8() {
+
+    C_Position_Begining = C_Position;
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 - 6;
+    }
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 - 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 + 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 - 6;
+    }
+    qDebug() << Write;
+    C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
+}
+
+void Widget::f9() {
+
+    C_Position_Begining = C_Position;
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+
+    for (int i=0; i<= 45; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    //    C_Position = QPoint((C_Position.x() + -100), C_Position.y()+135);  C_Position on half of the other side.
+
+    C_Position = QPoint((C_Position.x()), C_Position.y()+135);
+
+    x1 = C_Position.x();
+    y1 = C_Position.y();
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 - 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        y1 = y1 + 6;
+    }
+
+    for (int i=0; i<= 22; i++){
+        Write.insert(Write.end(), QPoint(x1, y1));
+        x1 = x1 + 6;
+    }
+
+    qDebug() << Write;
+    C_Position = QPoint((C_Position_Begining.x() + 210), C_Position_Begining.y());
+}
+
+
+
+//    if(x1!=x2){
+//        for (int i=0; x1<=x2; i++){
+//            Line[i] = QPoint(x1, y1);
+//            x1 = x1 + ((x1+x2)/increment);
+//        }
+//    } else {
+//        for (int i=0; y1<=y2; i++){
+//            Line[i] = QPoint(x1, y1);
+//            y1 = y1 + ((x1+x2)/increment);
+//        }
+//    }
+
+
+void Widget::readNumber()
+{
+    std::string Parse = ui->numberEdit->text().toStdString();
+
+    f1();
+    f9();
+    f0();
+    f4();
+    f4();
+    f6();
+    f8();
+    f6();
+}
+
+
+void Widget::on_WriteNumber_PushButton_clicked()
+{
+    readNumber();
+//    std::vector<QPoint> Write_for_Print = Write;
+//    int size = Write_for_Print.size();
+//    for(int i=0; i<=size; i++){
+//        ui->writeTextEdit->setText(QString::number(Write_for_Print[i].x()));
+//    }
+//    ui->writeTextEdit->setText(QString::number(Write[0].x()));
+    qDebug() << Write;
+}
+
+void Widget::on_DrawNumber_pushButton_clicked()
+{
+    ui->writeTextEdit->setText("Start Drawing");
+
+    for(auto i : Write){
+        ui->X_Pos->setText(QString::number(i.x()));
+        ui->Z_Pos->setText(QString::number(i.y()));
+        on_btn_Inverse_Kinematics_clicked();
+        on_btn_Forward_Kinematics_clicked();
+    }
+    ui->writeTextEdit->setText("Finished!!");
+
+    QLineSeries *series0 = new QLineSeries();
+    for(auto i : Write){
+        *series0 << QPointF(int(i.x()), int(i.y()));
+    }
+    chart->addSeries(series0);
+    chart->createDefaultAxes();
+    chart->setTitle("Robot Manipulator");
+
+
+    QChartView *chartView = new QChartView(chart);
+    chartView->setRenderHint(QPainter::Antialiasing);
+    chartView->setParent(ui->chartFrame);
+
+    QValueAxis *axisX = new QValueAxis;
+    float range;
+    range = (ui->L_1->text().toFloat())+
+            (ui->L_2->text().toFloat())+
+            (ui->L_3->text().toFloat());
+    axisX->setRange(-range, range);
+    axisX->setTickCount(10);
+    axisX->setLabelFormat("%.2f");
+    chartView->chart()->setAxisX(axisX, series0);
+
+    QValueAxis *axisY = new QValueAxis;
+    axisY->setRange(-range, range);
+    axisY->setTickCount(10);
+    axisY->setLabelFormat("%.2f");
+    chartView->chart()->setAxisY(axisY, series0);
+
+}
