@@ -1,7 +1,0 @@
-<map id="h_T" name="h_T">
-<area shape="rect" id="node1" title="h_T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respecti..." alt="" coords="5,81,48,108"/>
-<area shape="rect" id="node2" href="$widget_8cpp.html#ad94f7e261df4d8c4ec27d91f4c31a754" title="rot_x calculates the rotation matrix on the X axis given an &quot;alpha&quot; angle." alt="" coords="103,5,154,32"/>
-<area shape="rect" id="node3" href="$widget_8cpp.html#af82782d29abfebef20fcd7a9e76d130d" title="rot_z calculates the rotation matrix on the X axis given an &quot;theta&quot; angle." alt="" coords="103,56,154,83"/>
-<area shape="rect" id="node4" href="$widget_8cpp.html#a29a7fe5a7a78553121b5127b3944263e" title="trans_x calculates the translation matrix on the X axis given an &quot;a&quot; number." alt="" coords="96,107,161,133"/>
-<area shape="rect" id="node5" href="$widget_8cpp.html#a15df1a1c08d80d79cd36363d858971c1" title="trans_z calculates the translation matrix on the X axis given an &quot;d&quot; number." alt="" coords="96,157,161,184"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="Widget::drawChart" name="Widget::drawChart">
-<area shape="rect" id="node1" title="Widget::drawChart draw the Graphic based on the transformation matrices." alt="" coords="413,111,543,138"/>
-<area shape="rect" id="node2" href="$class_widget.html#afd7258470c40aecd57dd9de126a88626" title="Widget::on_btn_Forward_Kinematics_clicked calculates the Forward Kinematics based on the values of Th..." alt="" coords="203,104,365,145"/>
-<area shape="rect" id="node3" href="$class_widget.html#a961359f2824ebc367f1b113409da16e0" title="Widget::on_rotXSlider_sliderMoved connects Theta 1 value to the Slider." alt="" coords="7,5,153,47"/>
-<area shape="rect" id="node4" href="$class_widget.html#aca9343b60c016a138816e64c2be36e69" title="Widget::on_rotYSlider_sliderMoved connects Theta 2 value to the Slider." alt="" coords="5,71,155,112"/>
-<area shape="rect" id="node5" href="$class_widget.html#aa3ccbdb058ec922dbfc3d79cf2fd67b5" title="Widget::on_rotZSlider_sliderMoved connects Theta 3 value to the Slider." alt="" coords="7,136,153,177"/>
-<area shape="rect" id="node6" href="$class_widget.html#ace1aa23652eb4425355a81760b39fd37" title=" " alt="" coords="24,202,136,229"/>
-</map>
