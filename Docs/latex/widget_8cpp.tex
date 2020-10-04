@@ -1,0 +1,190 @@
+\hypertarget{widget_8cpp}{}\doxysection{widget.\+cpp File Reference}
+\label{widget_8cpp}\index{widget.cpp@{widget.cpp}}
+{\ttfamily \#include \char`\"{}widget.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}./ui\+\_\+widget.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Q\+Debug$>$}\newline
+{\ttfamily \#include $<$Q\+String$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include \char`\"{}C\+:/eigen/\+Eigen/\+Dense\char`\"{}}\newline
+Include dependency graph for widget.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{widget_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Matrix4d \mbox{\hyperlink{widget_8cpp_ad94f7e261df4d8c4ec27d91f4c31a754}{rot\+\_\+x}} (double alpha)
+\begin{DoxyCompactList}\small\item\em rot\+\_\+x calculates the rotation matrix on the X axis given an \char`\"{}alpha\char`\"{} angle. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{widget_8cpp_a29a7fe5a7a78553121b5127b3944263e}{trans\+\_\+x}} (double a)
+\begin{DoxyCompactList}\small\item\em trans\+\_\+x calculates the translation matrix on the X axis given an \char`\"{}a\char`\"{} number. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{widget_8cpp_af82782d29abfebef20fcd7a9e76d130d}{rot\+\_\+z}} (double theta)
+\begin{DoxyCompactList}\small\item\em rot\+\_\+z calculates the rotation matrix on the X axis given an \char`\"{}theta\char`\"{} angle. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{widget_8cpp_a15df1a1c08d80d79cd36363d858971c1}{trans\+\_\+z}} (double d)
+\begin{DoxyCompactList}\small\item\em trans\+\_\+z calculates the translation matrix on the X axis given an \char`\"{}d\char`\"{} number. \end{DoxyCompactList}\item 
+Matrix4d \mbox{\hyperlink{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1}{h\+\_\+T}} (double alpha, double a, double theta, double d)
+\begin{DoxyCompactList}\small\item\em h\+\_\+T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respective matrices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1}\label{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1}} 
+\index{widget.cpp@{widget.cpp}!h\_T@{h\_T}}
+\index{h\_T@{h\_T}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{h\_T()}{h\_T()}}
+{\footnotesize\ttfamily Matrix4d h\+\_\+T (\begin{DoxyParamCaption}\item[{double}]{alpha,  }\item[{double}]{a,  }\item[{double}]{theta,  }\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+h\+\_\+T takes the parameters given (alpha, a, theta, d) and calculates a dot product between the respective matrices. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & \\
+\hline
+{\em a} & \\
+\hline
+{\em theta} & \\
+\hline
+{\em d} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 123 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=197pt]{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{widget_8cpp_a70cc51f184a87f6bf5b3cf37aac67cc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{widget_8cpp_ad94f7e261df4d8c4ec27d91f4c31a754}\label{widget_8cpp_ad94f7e261df4d8c4ec27d91f4c31a754}} 
+\index{widget.cpp@{widget.cpp}!rot\_x@{rot\_x}}
+\index{rot\_x@{rot\_x}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{rot\_x()}{rot\_x()}}
+{\footnotesize\ttfamily Matrix4d rot\+\_\+x (\begin{DoxyParamCaption}\item[{double}]{alpha }\end{DoxyParamCaption})}
+
+
+
+rot\+\_\+x calculates the rotation matrix on the X axis given an \char`\"{}alpha\char`\"{} angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em alpha} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 60 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{widget_8cpp_ad94f7e261df4d8c4ec27d91f4c31a754_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{widget_8cpp_af82782d29abfebef20fcd7a9e76d130d}\label{widget_8cpp_af82782d29abfebef20fcd7a9e76d130d}} 
+\index{widget.cpp@{widget.cpp}!rot\_z@{rot\_z}}
+\index{rot\_z@{rot\_z}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{rot\_z()}{rot\_z()}}
+{\footnotesize\ttfamily Matrix4d rot\+\_\+z (\begin{DoxyParamCaption}\item[{double}]{theta }\end{DoxyParamCaption})}
+
+
+
+rot\+\_\+z calculates the rotation matrix on the X axis given an \char`\"{}theta\char`\"{} angle. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em theta} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 90 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{widget_8cpp_af82782d29abfebef20fcd7a9e76d130d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{widget_8cpp_a29a7fe5a7a78553121b5127b3944263e}\label{widget_8cpp_a29a7fe5a7a78553121b5127b3944263e}} 
+\index{widget.cpp@{widget.cpp}!trans\_x@{trans\_x}}
+\index{trans\_x@{trans\_x}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{trans\_x()}{trans\_x()}}
+{\footnotesize\ttfamily Matrix4d trans\+\_\+x (\begin{DoxyParamCaption}\item[{double}]{a }\end{DoxyParamCaption})}
+
+
+
+trans\+\_\+x calculates the translation matrix on the X axis given an \char`\"{}a\char`\"{} number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 75 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{widget_8cpp_a29a7fe5a7a78553121b5127b3944263e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{widget_8cpp_a15df1a1c08d80d79cd36363d858971c1}\label{widget_8cpp_a15df1a1c08d80d79cd36363d858971c1}} 
+\index{widget.cpp@{widget.cpp}!trans\_z@{trans\_z}}
+\index{trans\_z@{trans\_z}!widget.cpp@{widget.cpp}}
+\doxysubsubsection{\texorpdfstring{trans\_z()}{trans\_z()}}
+{\footnotesize\ttfamily Matrix4d trans\+\_\+z (\begin{DoxyParamCaption}\item[{double}]{d }\end{DoxyParamCaption})}
+
+
+
+trans\+\_\+z calculates the translation matrix on the X axis given an \char`\"{}d\char`\"{} number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em d} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 105 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{widget_8cpp_a15df1a1c08d80d79cd36363d858971c1_icgraph}
+\end{center}
+\end{figure}

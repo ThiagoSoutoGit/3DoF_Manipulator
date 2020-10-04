@@ -652,13 +652,13 @@ void Widget::readNumber()
     std::string Parse = ui->numberEdit->text().toStdString();
 
     f1();
-//    f9();
-//    f0();
-//    f4();
-//    f4();
-//    f6();
-//    f8();
-//    f6();
+    f9();
+    f0();
+    f4();
+    f4();
+    f6();
+    f8();
+    f6();
 }
 
 

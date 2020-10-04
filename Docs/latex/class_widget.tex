@@ -1,0 +1,1017 @@
+\hypertarget{class_widget}{}\doxysection{Widget Class Reference}
+\label{class_widget}\index{Widget@{Widget}}
+
+
+{\ttfamily \#include $<$widget.\+h$>$}
+
+
+
+Inheritance diagram for Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_widget__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Widget\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_widget__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_widget_a60fe9264f65f0505693f2cde7e8947c7}{on\+\_\+btn\+\_\+\+Inverse\+\_\+\+Kinematics\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a60fe9264f65f0505693f2cde7e8947c7}{Widget\+::on\+\_\+btn\+\_\+\+Inverse\+\_\+\+Kinematics\+\_\+clicked}} calculates the Inverse Kinematics using the values of X, Y, Z positions and the L1, L2, and L3 link lengths; and fill the Theta 1, Theta 2 and Theta 3 Line Edits. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_afd7258470c40aecd57dd9de126a88626}{on\+\_\+btn\+\_\+\+Forward\+\_\+\+Kinematics\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_afd7258470c40aecd57dd9de126a88626}{Widget\+::on\+\_\+btn\+\_\+\+Forward\+\_\+\+Kinematics\+\_\+clicked}} calculates the Forward Kinematics based on the values of Theta 1, Theta 2 and Theta 3 Line Edits and the L1, L2, and L3 link lengths; and fill the X, Y, Z positions Line Edits. After Generating all the matrices It draws the manipulator on the Graphics tab. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a25af1fb9cf3eea472935a4a416017e2a}{on\+\_\+send\+\_\+instructions\+\_\+push\+Button\+\_\+clicked}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a25af1fb9cf3eea472935a4a416017e2a}{Widget\+::on\+\_\+send\+\_\+instructions\+\_\+push\+Button\+\_\+clicked}} send the instructions via \mbox{\hyperlink{class_serial}{Serial}} Port to the microcontroller. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a961359f2824ebc367f1b113409da16e0}{on\+\_\+rot\+X\+Slider\+\_\+slider\+Moved}} (int position)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a961359f2824ebc367f1b113409da16e0}{Widget\+::on\+\_\+rot\+X\+Slider\+\_\+slider\+Moved}} connects Theta 1 value to the Slider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_aca9343b60c016a138816e64c2be36e69}{on\+\_\+rot\+Y\+Slider\+\_\+slider\+Moved}} (int position)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_aca9343b60c016a138816e64c2be36e69}{Widget\+::on\+\_\+rot\+Y\+Slider\+\_\+slider\+Moved}} connects Theta 2 value to the Slider. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_aa3ccbdb058ec922dbfc3d79cf2fd67b5}{on\+\_\+rot\+Z\+Slider\+\_\+slider\+Moved}} (int position)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_aa3ccbdb058ec922dbfc3d79cf2fd67b5}{Widget\+::on\+\_\+rot\+Z\+Slider\+\_\+slider\+Moved}} connects Theta 3 value to the Slider. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_widget_a0bf5e2dd8ae7eb33ef3b1a9020c4e3f3}{data\+Changed}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_widget_ace1aa23652eb4425355a81760b39fd37}{Widget}} (Q\+Widget $\ast$parent=nullptr)
+\item 
+\mbox{\hyperlink{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}{$\sim$\+Widget}} ()
+\item 
+void \mbox{\hyperlink{class_widget_a3fbfb10fd157677b9eeadb369b1be131}{read\+Number}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a3fbfb10fd157677b9eeadb369b1be131}{Widget\+::read\+Number}} Reads the number to be drawn and call the draw functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a5ca4b127033cd1bf5757f070ed129f83}{draw\+Chart}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a5ca4b127033cd1bf5757f070ed129f83}{Widget\+::draw\+Chart}} draw the Graphic based on the transformation matrices. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a713c2424dd8eb67a883eb338d0bbc5cc}{print\+Matrix}} (Matrix4d M)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a713c2424dd8eb67a883eb338d0bbc5cc}{Widget\+::print\+Matrix}} prints the matrices on the Text edits fields. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a4782b08a63eb84b117085edd82f3d667}{f0}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a4782b08a63eb84b117085edd82f3d667}{Widget\+::f0}} draws a 0 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_ad4193c06632aa0f086e5eba9673f8885}{f1}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_ad4193c06632aa0f086e5eba9673f8885}{Widget\+::f1}} draws a 1 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_af54fca36ebf46877e1040a372515a9fd}{f4}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_af54fca36ebf46877e1040a372515a9fd}{Widget\+::f4}} draws a 4 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_aa629fd2ca83225559b2ba663738c8625}{f6}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_aa629fd2ca83225559b2ba663738c8625}{Widget\+::f6}} draws a 6 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a7bf42dccae479b47d62da4347462e3c8}{f8}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a7bf42dccae479b47d62da4347462e3c8}{Widget\+::f8}} draws a 8 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_widget_a066c60c7a4f75ae68ac63102b5e82f92}{f9}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_widget_a066c60c7a4f75ae68ac63102b5e82f92}{Widget\+::f9}} draws a 9 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Ui\+::\+Widget $\ast$ \mbox{\hyperlink{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}{ui}}
+\item 
+Q\+Chart $\ast$ \mbox{\hyperlink{class_widget_ab87650695264788abcb78f5bdf060c32}{chart}} = new Q\+Chart()
+\item 
+double \mbox{\hyperlink{class_widget_a68eb20e8bf8d089ef5deb5eeb1d78b49}{theta\+\_\+1\+\_\+value}}
+\item 
+double \mbox{\hyperlink{class_widget_ab5de3cb433740f3721f1bed46cec88ca}{theta\+\_\+2\+\_\+value}}
+\item 
+double \mbox{\hyperlink{class_widget_af60c082cff04e8915306e6548687aafe}{theta\+\_\+3\+\_\+value}}
+\item 
+double \mbox{\hyperlink{class_widget_aec5f0022b60a6141271aad3bf68ea011}{l\+\_\+1\+\_\+value}}
+\item 
+double \mbox{\hyperlink{class_widget_a27d74000267f933f8caa21f36f8db053}{l\+\_\+2\+\_\+value}}
+\item 
+double \mbox{\hyperlink{class_widget_a0a2d858d8f58beb1bf2d071161e17afa}{l\+\_\+3\+\_\+value}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_afdcd5d5ac524ee214db94ffb3597064d}{t\+\_\+0\+\_\+1\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_ad90622fb08d8b565dbb90bd3e4f41fb7}{t\+\_\+1\+\_\+2\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_ab05660af796dc3f45ca30b5bcef6bf88}{t\+\_\+2\+\_\+3\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_a1cec8d723cff21b0f329c52e55c02510}{t\+\_\+3\+\_\+4\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_aedef7447213337d290d293f5931e9a96}{t\+\_\+0\+\_\+3\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_a408bb1f20a38700c5bc9066750c55ff0}{t\+\_\+0\+\_\+2\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_aff2c706009f6a5da3e8f71ce9831e051}{t\+\_\+1\+\_\+5\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_a3b3d5a6b7980a2747855f2075c7897e3}{t\+\_\+1\+\_\+4\+\_\+matrix}}
+\item 
+Matrix4d \mbox{\hyperlink{class_widget_a02c3ab7f67c88e44a2870714f2ffab70}{T}}
+\item 
+Q\+String \mbox{\hyperlink{class_widget_ae2472e5df851c72cf65a183d6a754f6f}{Pos\+\_\+x}}
+\item 
+Q\+String \mbox{\hyperlink{class_widget_a5c4b47980d239d60c79327a58f9c89e5}{Pos\+\_\+y}}
+\item 
+Q\+String \mbox{\hyperlink{class_widget_a7d80f655494fb6d303b37e1d2d415108}{Pos\+\_\+z}}
+\item 
+Q\+String \mbox{\hyperlink{class_widget_a7fedee607dd2a3910a211ca82ed8b980}{value}}
+\item 
+Q\+Point \mbox{\hyperlink{class_widget_af9d44c7365393dc0e383148277691fa6}{C\+\_\+\+Position}}
+\item 
+Q\+Point \mbox{\hyperlink{class_widget_aebdb135d66f28f94c693ffaa083b292a}{C\+\_\+\+Position\+\_\+\+Begining}}
+\item 
+int \mbox{\hyperlink{class_widget_a928275b5f270d3ba5c726ccdaaa59d80}{tx01}}
+\item 
+int \mbox{\hyperlink{class_widget_ab49de792246fcfa8425154858177d323}{tx12}}
+\item 
+int \mbox{\hyperlink{class_widget_ade47ac178990e8106fe34b765f8b99ab}{tx23}}
+\item 
+int \mbox{\hyperlink{class_widget_af8d8bf3f40ce21a1ca2e59931319faa5}{tx34}}
+\item 
+int \mbox{\hyperlink{class_widget_af2c61dbf6524715909c54b3904fcecf3}{tx02}}
+\item 
+int \mbox{\hyperlink{class_widget_a0bb67744755fd66fc961e09be5b81624}{tx03}}
+\item 
+int \mbox{\hyperlink{class_widget_a65e64a42912e5b705cee9fb30b852399}{ty01}}
+\item 
+int \mbox{\hyperlink{class_widget_a666f806d3db015df0c1042bed89b6658}{ty12}}
+\item 
+int \mbox{\hyperlink{class_widget_a8e4636d5e4701d3259f5b287f5a9ac7b}{ty23}}
+\item 
+int \mbox{\hyperlink{class_widget_a1d56db61dd740b26cc74283c0deed649}{ty34}}
+\item 
+int \mbox{\hyperlink{class_widget_a7c66d2b69f78962428dc8bc54f1e2c95}{ty02}}
+\item 
+int \mbox{\hyperlink{class_widget_a912859aab75b9a730b54f096e6e92b61}{ty03}}
+\item 
+int \mbox{\hyperlink{class_widget_a130417b3184bd86a66c10f238ec9c28e}{tz01}}
+\item 
+int \mbox{\hyperlink{class_widget_acfda52dbead00a05ce6c46f69eb658f7}{tz12}}
+\item 
+int \mbox{\hyperlink{class_widget_ac6d993886b08bf4cebdce2a24911f731}{tz23}}
+\item 
+int \mbox{\hyperlink{class_widget_a9baed9f1674f550031703d841b97b174}{tz34}}
+\item 
+int \mbox{\hyperlink{class_widget_ae90dce7bccabcf74230c12244a0136be}{tz02}}
+\item 
+int \mbox{\hyperlink{class_widget_a93bfffc60dceec9d6d814ef2778e1859}{tz03}}
+\item 
+int \mbox{\hyperlink{class_widget_ae49e86767c0b65dc2e50a4d39d60ea34}{Tx}}
+\item 
+int \mbox{\hyperlink{class_widget_a931a79c8de87336d5ad20032fec6a3d8}{Ty}}
+\item 
+int \mbox{\hyperlink{class_widget_ae056484c638a698ea15801b3d0743bad}{Tz}}
+\item 
+float \mbox{\hyperlink{class_widget_ac0d3617e3a774edf9f4ea1494b5f2251}{x1}}
+\item 
+float \mbox{\hyperlink{class_widget_a9d28e7ab9323457639ae7f02be44676f}{y1}}
+\item 
+std\+::vector$<$ Q\+Point $>$ \mbox{\hyperlink{class_widget_a592b9f4e9fbda68e255a22479777f766}{Write}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{class_widget_a40b613da7ab0e4fac3fd0bb007f3ce6b}{serial}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line 30 of file widget.\+h.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_widget_ace1aa23652eb4425355a81760b39fd37}\label{class_widget_ace1aa23652eb4425355a81760b39fd37}} 
+\index{Widget@{Widget}!Widget@{Widget}}
+\index{Widget@{Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Widget()}{Widget()}}
+{\footnotesize\ttfamily Widget\+::\+Widget (\begin{DoxyParamCaption}\item[{Q\+Widget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_ace1aa23652eb4425355a81760b39fd37_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}\label{class_widget_aa24f66bcbaaec6d458b0980e8c8eae65}} 
+\index{Widget@{Widget}!````~Widget@{$\sim$Widget}}
+\index{````~Widget@{$\sim$Widget}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{$\sim$Widget()}{~Widget()}}
+{\footnotesize\ttfamily Widget\+::$\sim$\+Widget (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file widget.\+cpp.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_widget_a0bf5e2dd8ae7eb33ef3b1a9020c4e3f3}\label{class_widget_a0bf5e2dd8ae7eb33ef3b1a9020c4e3f3}} 
+\index{Widget@{Widget}!dataChanged@{dataChanged}}
+\index{dataChanged@{dataChanged}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{dataChanged}{dataChanged}}
+{\footnotesize\ttfamily void Widget\+::data\+Changed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{class_widget_a5ca4b127033cd1bf5757f070ed129f83}\label{class_widget_a5ca4b127033cd1bf5757f070ed129f83}} 
+\index{Widget@{Widget}!drawChart@{drawChart}}
+\index{drawChart@{drawChart}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{drawChart()}{drawChart()}}
+{\footnotesize\ttfamily void Widget\+::draw\+Chart (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_a5ca4b127033cd1bf5757f070ed129f83}{Widget\+::draw\+Chart}} draw the Graphic based on the transformation matrices. 
+
+
+
+Definition at line 305 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_a5ca4b127033cd1bf5757f070ed129f83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_a4782b08a63eb84b117085edd82f3d667}\label{class_widget_a4782b08a63eb84b117085edd82f3d667}} 
+\index{Widget@{Widget}!f0@{f0}}
+\index{f0@{f0}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{f0()}{f0()}}
+{\footnotesize\ttfamily void Widget\+::f0 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_a4782b08a63eb84b117085edd82f3d667}{Widget\+::f0}} draws a 0 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. 
+
+
+
+Definition at line 438 of file widget.\+cpp.
+
+\mbox{\Hypertarget{class_widget_ad4193c06632aa0f086e5eba9673f8885}\label{class_widget_ad4193c06632aa0f086e5eba9673f8885}} 
+\index{Widget@{Widget}!f1@{f1}}
+\index{f1@{f1}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{f1()}{f1()}}
+{\footnotesize\ttfamily void Widget\+::f1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_ad4193c06632aa0f086e5eba9673f8885}{Widget\+::f1}} draws a 1 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. 
+
+
+
+Definition at line 474 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{class_widget_ad4193c06632aa0f086e5eba9673f8885_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_af54fca36ebf46877e1040a372515a9fd}\label{class_widget_af54fca36ebf46877e1040a372515a9fd}} 
+\index{Widget@{Widget}!f4@{f4}}
+\index{f4@{f4}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{f4()}{f4()}}
+{\footnotesize\ttfamily void Widget\+::f4 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_af54fca36ebf46877e1040a372515a9fd}{Widget\+::f4}} draws a 4 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. 
+
+
+
+Definition at line 493 of file widget.\+cpp.
+
+\mbox{\Hypertarget{class_widget_aa629fd2ca83225559b2ba663738c8625}\label{class_widget_aa629fd2ca83225559b2ba663738c8625}} 
+\index{Widget@{Widget}!f6@{f6}}
+\index{f6@{f6}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{f6()}{f6()}}
+{\footnotesize\ttfamily void Widget\+::f6 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_aa629fd2ca83225559b2ba663738c8625}{Widget\+::f6}} draws a 6 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. 
+
+
+
+Definition at line 527 of file widget.\+cpp.
+
+\mbox{\Hypertarget{class_widget_a7bf42dccae479b47d62da4347462e3c8}\label{class_widget_a7bf42dccae479b47d62da4347462e3c8}} 
+\index{Widget@{Widget}!f8@{f8}}
+\index{f8@{f8}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{f8()}{f8()}}
+{\footnotesize\ttfamily void Widget\+::f8 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_a7bf42dccae479b47d62da4347462e3c8}{Widget\+::f8}} draws a 8 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. 
+
+
+
+Definition at line 567 of file widget.\+cpp.
+
+\mbox{\Hypertarget{class_widget_a066c60c7a4f75ae68ac63102b5e82f92}\label{class_widget_a066c60c7a4f75ae68ac63102b5e82f92}} 
+\index{Widget@{Widget}!f9@{f9}}
+\index{f9@{f9}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{f9()}{f9()}}
+{\footnotesize\ttfamily void Widget\+::f9 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_a066c60c7a4f75ae68ac63102b5e82f92}{Widget\+::f9}} draws a 9 using the vector \char`\"{}\+Write\char`\"{} with the manipulator coordinates. 
+
+
+
+Definition at line 611 of file widget.\+cpp.
+
+\mbox{\Hypertarget{class_widget_afd7258470c40aecd57dd9de126a88626}\label{class_widget_afd7258470c40aecd57dd9de126a88626}} 
+\index{Widget@{Widget}!on\_btn\_Forward\_Kinematics\_clicked@{on\_btn\_Forward\_Kinematics\_clicked}}
+\index{on\_btn\_Forward\_Kinematics\_clicked@{on\_btn\_Forward\_Kinematics\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_btn\_Forward\_Kinematics\_clicked}{on\_btn\_Forward\_Kinematics\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+btn\+\_\+\+Forward\+\_\+\+Kinematics\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_widget_afd7258470c40aecd57dd9de126a88626}{Widget\+::on\+\_\+btn\+\_\+\+Forward\+\_\+\+Kinematics\+\_\+clicked}} calculates the Forward Kinematics based on the values of Theta 1, Theta 2 and Theta 3 Line Edits and the L1, L2, and L3 link lengths; and fill the X, Y, Z positions Line Edits. After Generating all the matrices It draws the manipulator on the Graphics tab. 
+
+
+
+Definition at line 187 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_afd7258470c40aecd57dd9de126a88626_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_afd7258470c40aecd57dd9de126a88626_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_a60fe9264f65f0505693f2cde7e8947c7}\label{class_widget_a60fe9264f65f0505693f2cde7e8947c7}} 
+\index{Widget@{Widget}!on\_btn\_Inverse\_Kinematics\_clicked@{on\_btn\_Inverse\_Kinematics\_clicked}}
+\index{on\_btn\_Inverse\_Kinematics\_clicked@{on\_btn\_Inverse\_Kinematics\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_btn\_Inverse\_Kinematics\_clicked}{on\_btn\_Inverse\_Kinematics\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+btn\+\_\+\+Inverse\+\_\+\+Kinematics\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_widget_a60fe9264f65f0505693f2cde7e8947c7}{Widget\+::on\+\_\+btn\+\_\+\+Inverse\+\_\+\+Kinematics\+\_\+clicked}} calculates the Inverse Kinematics using the values of X, Y, Z positions and the L1, L2, and L3 link lengths; and fill the Theta 1, Theta 2 and Theta 3 Line Edits. 
+
+
+
+Definition at line 133 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_a60fe9264f65f0505693f2cde7e8947c7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_a961359f2824ebc367f1b113409da16e0}\label{class_widget_a961359f2824ebc367f1b113409da16e0}} 
+\index{Widget@{Widget}!on\_rotXSlider\_sliderMoved@{on\_rotXSlider\_sliderMoved}}
+\index{on\_rotXSlider\_sliderMoved@{on\_rotXSlider\_sliderMoved}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_rotXSlider\_sliderMoved}{on\_rotXSlider\_sliderMoved}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+rot\+X\+Slider\+\_\+slider\+Moved (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_widget_a961359f2824ebc367f1b113409da16e0}{Widget\+::on\+\_\+rot\+X\+Slider\+\_\+slider\+Moved}} connects Theta 1 value to the Slider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 398 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_a961359f2824ebc367f1b113409da16e0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_aca9343b60c016a138816e64c2be36e69}\label{class_widget_aca9343b60c016a138816e64c2be36e69}} 
+\index{Widget@{Widget}!on\_rotYSlider\_sliderMoved@{on\_rotYSlider\_sliderMoved}}
+\index{on\_rotYSlider\_sliderMoved@{on\_rotYSlider\_sliderMoved}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_rotYSlider\_sliderMoved}{on\_rotYSlider\_sliderMoved}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+rot\+Y\+Slider\+\_\+slider\+Moved (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_widget_aca9343b60c016a138816e64c2be36e69}{Widget\+::on\+\_\+rot\+Y\+Slider\+\_\+slider\+Moved}} connects Theta 2 value to the Slider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 412 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_aca9343b60c016a138816e64c2be36e69_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_aa3ccbdb058ec922dbfc3d79cf2fd67b5}\label{class_widget_aa3ccbdb058ec922dbfc3d79cf2fd67b5}} 
+\index{Widget@{Widget}!on\_rotZSlider\_sliderMoved@{on\_rotZSlider\_sliderMoved}}
+\index{on\_rotZSlider\_sliderMoved@{on\_rotZSlider\_sliderMoved}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_rotZSlider\_sliderMoved}{on\_rotZSlider\_sliderMoved}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+rot\+Z\+Slider\+\_\+slider\+Moved (\begin{DoxyParamCaption}\item[{int}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_widget_aa3ccbdb058ec922dbfc3d79cf2fd67b5}{Widget\+::on\+\_\+rot\+Z\+Slider\+\_\+slider\+Moved}} connects Theta 3 value to the Slider. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 426 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_aa3ccbdb058ec922dbfc3d79cf2fd67b5_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_a25af1fb9cf3eea472935a4a416017e2a}\label{class_widget_a25af1fb9cf3eea472935a4a416017e2a}} 
+\index{Widget@{Widget}!on\_send\_instructions\_pushButton\_clicked@{on\_send\_instructions\_pushButton\_clicked}}
+\index{on\_send\_instructions\_pushButton\_clicked@{on\_send\_instructions\_pushButton\_clicked}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{on\_send\_instructions\_pushButton\_clicked}{on\_send\_instructions\_pushButton\_clicked}}
+{\footnotesize\ttfamily void Widget\+::on\+\_\+send\+\_\+instructions\+\_\+push\+Button\+\_\+clicked (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+
+
+\mbox{\hyperlink{class_widget_a25af1fb9cf3eea472935a4a416017e2a}{Widget\+::on\+\_\+send\+\_\+instructions\+\_\+push\+Button\+\_\+clicked}} send the instructions via \mbox{\hyperlink{class_serial}{Serial}} Port to the microcontroller. 
+
+
+
+Definition at line 369 of file widget.\+cpp.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_a25af1fb9cf3eea472935a4a416017e2a_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_a713c2424dd8eb67a883eb338d0bbc5cc}\label{class_widget_a713c2424dd8eb67a883eb338d0bbc5cc}} 
+\index{Widget@{Widget}!printMatrix@{printMatrix}}
+\index{printMatrix@{printMatrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{printMatrix()}{printMatrix()}}
+{\footnotesize\ttfamily void Widget\+::print\+Matrix (\begin{DoxyParamCaption}\item[{Matrix4d}]{M }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_a713c2424dd8eb67a883eb338d0bbc5cc}{Widget\+::print\+Matrix}} prints the matrices on the Text edits fields. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em M} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 350 of file widget.\+cpp.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_widget_a713c2424dd8eb67a883eb338d0bbc5cc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_widget_a3fbfb10fd157677b9eeadb369b1be131}\label{class_widget_a3fbfb10fd157677b9eeadb369b1be131}} 
+\index{Widget@{Widget}!readNumber@{readNumber}}
+\index{readNumber@{readNumber}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{readNumber()}{readNumber()}}
+{\footnotesize\ttfamily void Widget\+::read\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{class_widget_a3fbfb10fd157677b9eeadb369b1be131}{Widget\+::read\+Number}} Reads the number to be drawn and call the draw functions. 
+
+
+
+Definition at line 650 of file widget.\+cpp.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{class_widget_a3fbfb10fd157677b9eeadb369b1be131_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_widget_a40b613da7ab0e4fac3fd0bb007f3ce6b}\label{class_widget_a40b613da7ab0e4fac3fd0bb007f3ce6b}} 
+\index{Widget@{Widget}!serial@{serial}}
+\index{serial@{serial}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{serial}{serial}}
+{\footnotesize\ttfamily friend class serial\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 34 of file widget.\+h.
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_widget_af9d44c7365393dc0e383148277691fa6}\label{class_widget_af9d44c7365393dc0e383148277691fa6}} 
+\index{Widget@{Widget}!C\_Position@{C\_Position}}
+\index{C\_Position@{C\_Position}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{C\_Position}{C\_Position}}
+{\footnotesize\ttfamily Q\+Point Widget\+::\+C\+\_\+\+Position}
+
+
+
+Definition at line 70 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_aebdb135d66f28f94c693ffaa083b292a}\label{class_widget_aebdb135d66f28f94c693ffaa083b292a}} 
+\index{Widget@{Widget}!C\_Position\_Begining@{C\_Position\_Begining}}
+\index{C\_Position\_Begining@{C\_Position\_Begining}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{C\_Position\_Begining}{C\_Position\_Begining}}
+{\footnotesize\ttfamily Q\+Point Widget\+::\+C\+\_\+\+Position\+\_\+\+Begining}
+
+
+
+Definition at line 71 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ab87650695264788abcb78f5bdf060c32}\label{class_widget_ab87650695264788abcb78f5bdf060c32}} 
+\index{Widget@{Widget}!chart@{chart}}
+\index{chart@{chart}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{chart}{chart}}
+{\footnotesize\ttfamily Q\+Chart$\ast$ Widget\+::chart = new Q\+Chart()}
+
+
+
+Definition at line 42 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_aec5f0022b60a6141271aad3bf68ea011}\label{class_widget_aec5f0022b60a6141271aad3bf68ea011}} 
+\index{Widget@{Widget}!l\_1\_value@{l\_1\_value}}
+\index{l\_1\_value@{l\_1\_value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{l\_1\_value}{l\_1\_value}}
+{\footnotesize\ttfamily double Widget\+::l\+\_\+1\+\_\+value}
+
+
+
+Definition at line 48 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a27d74000267f933f8caa21f36f8db053}\label{class_widget_a27d74000267f933f8caa21f36f8db053}} 
+\index{Widget@{Widget}!l\_2\_value@{l\_2\_value}}
+\index{l\_2\_value@{l\_2\_value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{l\_2\_value}{l\_2\_value}}
+{\footnotesize\ttfamily double Widget\+::l\+\_\+2\+\_\+value}
+
+
+
+Definition at line 49 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a0a2d858d8f58beb1bf2d071161e17afa}\label{class_widget_a0a2d858d8f58beb1bf2d071161e17afa}} 
+\index{Widget@{Widget}!l\_3\_value@{l\_3\_value}}
+\index{l\_3\_value@{l\_3\_value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{l\_3\_value}{l\_3\_value}}
+{\footnotesize\ttfamily double Widget\+::l\+\_\+3\+\_\+value}
+
+
+
+Definition at line 50 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ae2472e5df851c72cf65a183d6a754f6f}\label{class_widget_ae2472e5df851c72cf65a183d6a754f6f}} 
+\index{Widget@{Widget}!Pos\_x@{Pos\_x}}
+\index{Pos\_x@{Pos\_x}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Pos\_x}{Pos\_x}}
+{\footnotesize\ttfamily Q\+String Widget\+::\+Pos\+\_\+x}
+
+
+
+Definition at line 66 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a5c4b47980d239d60c79327a58f9c89e5}\label{class_widget_a5c4b47980d239d60c79327a58f9c89e5}} 
+\index{Widget@{Widget}!Pos\_y@{Pos\_y}}
+\index{Pos\_y@{Pos\_y}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Pos\_y}{Pos\_y}}
+{\footnotesize\ttfamily Q\+String Widget\+::\+Pos\+\_\+y}
+
+
+
+Definition at line 67 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a7d80f655494fb6d303b37e1d2d415108}\label{class_widget_a7d80f655494fb6d303b37e1d2d415108}} 
+\index{Widget@{Widget}!Pos\_z@{Pos\_z}}
+\index{Pos\_z@{Pos\_z}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Pos\_z}{Pos\_z}}
+{\footnotesize\ttfamily Q\+String Widget\+::\+Pos\+\_\+z}
+
+
+
+Definition at line 68 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a02c3ab7f67c88e44a2870714f2ffab70}\label{class_widget_a02c3ab7f67c88e44a2870714f2ffab70}} 
+\index{Widget@{Widget}!T@{T}}
+\index{T@{T}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{T}{T}}
+{\footnotesize\ttfamily Matrix4d Widget\+::T}
+
+
+
+Definition at line 64 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_afdcd5d5ac524ee214db94ffb3597064d}\label{class_widget_afdcd5d5ac524ee214db94ffb3597064d}} 
+\index{Widget@{Widget}!t\_0\_1\_matrix@{t\_0\_1\_matrix}}
+\index{t\_0\_1\_matrix@{t\_0\_1\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_0\_1\_matrix}{t\_0\_1\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+0\+\_\+1\+\_\+matrix}
+
+
+
+Definition at line 52 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a408bb1f20a38700c5bc9066750c55ff0}\label{class_widget_a408bb1f20a38700c5bc9066750c55ff0}} 
+\index{Widget@{Widget}!t\_0\_2\_matrix@{t\_0\_2\_matrix}}
+\index{t\_0\_2\_matrix@{t\_0\_2\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_0\_2\_matrix}{t\_0\_2\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+0\+\_\+2\+\_\+matrix}
+
+
+
+Definition at line 59 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_aedef7447213337d290d293f5931e9a96}\label{class_widget_aedef7447213337d290d293f5931e9a96}} 
+\index{Widget@{Widget}!t\_0\_3\_matrix@{t\_0\_3\_matrix}}
+\index{t\_0\_3\_matrix@{t\_0\_3\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_0\_3\_matrix}{t\_0\_3\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+0\+\_\+3\+\_\+matrix}
+
+
+
+Definition at line 57 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ad90622fb08d8b565dbb90bd3e4f41fb7}\label{class_widget_ad90622fb08d8b565dbb90bd3e4f41fb7}} 
+\index{Widget@{Widget}!t\_1\_2\_matrix@{t\_1\_2\_matrix}}
+\index{t\_1\_2\_matrix@{t\_1\_2\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_1\_2\_matrix}{t\_1\_2\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+1\+\_\+2\+\_\+matrix}
+
+
+
+Definition at line 53 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a3b3d5a6b7980a2747855f2075c7897e3}\label{class_widget_a3b3d5a6b7980a2747855f2075c7897e3}} 
+\index{Widget@{Widget}!t\_1\_4\_matrix@{t\_1\_4\_matrix}}
+\index{t\_1\_4\_matrix@{t\_1\_4\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_1\_4\_matrix}{t\_1\_4\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+1\+\_\+4\+\_\+matrix}
+
+
+
+Definition at line 62 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_aff2c706009f6a5da3e8f71ce9831e051}\label{class_widget_aff2c706009f6a5da3e8f71ce9831e051}} 
+\index{Widget@{Widget}!t\_1\_5\_matrix@{t\_1\_5\_matrix}}
+\index{t\_1\_5\_matrix@{t\_1\_5\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_1\_5\_matrix}{t\_1\_5\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+1\+\_\+5\+\_\+matrix}
+
+
+
+Definition at line 61 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ab05660af796dc3f45ca30b5bcef6bf88}\label{class_widget_ab05660af796dc3f45ca30b5bcef6bf88}} 
+\index{Widget@{Widget}!t\_2\_3\_matrix@{t\_2\_3\_matrix}}
+\index{t\_2\_3\_matrix@{t\_2\_3\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_2\_3\_matrix}{t\_2\_3\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+2\+\_\+3\+\_\+matrix}
+
+
+
+Definition at line 54 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a1cec8d723cff21b0f329c52e55c02510}\label{class_widget_a1cec8d723cff21b0f329c52e55c02510}} 
+\index{Widget@{Widget}!t\_3\_4\_matrix@{t\_3\_4\_matrix}}
+\index{t\_3\_4\_matrix@{t\_3\_4\_matrix}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{t\_3\_4\_matrix}{t\_3\_4\_matrix}}
+{\footnotesize\ttfamily Matrix4d Widget\+::t\+\_\+3\+\_\+4\+\_\+matrix}
+
+
+
+Definition at line 55 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a68eb20e8bf8d089ef5deb5eeb1d78b49}\label{class_widget_a68eb20e8bf8d089ef5deb5eeb1d78b49}} 
+\index{Widget@{Widget}!theta\_1\_value@{theta\_1\_value}}
+\index{theta\_1\_value@{theta\_1\_value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{theta\_1\_value}{theta\_1\_value}}
+{\footnotesize\ttfamily double Widget\+::theta\+\_\+1\+\_\+value}
+
+
+
+Definition at line 44 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ab5de3cb433740f3721f1bed46cec88ca}\label{class_widget_ab5de3cb433740f3721f1bed46cec88ca}} 
+\index{Widget@{Widget}!theta\_2\_value@{theta\_2\_value}}
+\index{theta\_2\_value@{theta\_2\_value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{theta\_2\_value}{theta\_2\_value}}
+{\footnotesize\ttfamily double Widget\+::theta\+\_\+2\+\_\+value}
+
+
+
+Definition at line 45 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_af60c082cff04e8915306e6548687aafe}\label{class_widget_af60c082cff04e8915306e6548687aafe}} 
+\index{Widget@{Widget}!theta\_3\_value@{theta\_3\_value}}
+\index{theta\_3\_value@{theta\_3\_value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{theta\_3\_value}{theta\_3\_value}}
+{\footnotesize\ttfamily double Widget\+::theta\+\_\+3\+\_\+value}
+
+
+
+Definition at line 46 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ae49e86767c0b65dc2e50a4d39d60ea34}\label{class_widget_ae49e86767c0b65dc2e50a4d39d60ea34}} 
+\index{Widget@{Widget}!Tx@{Tx}}
+\index{Tx@{Tx}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Tx}{Tx}}
+{\footnotesize\ttfamily int Widget\+::\+Tx}
+
+
+
+Definition at line 97 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a928275b5f270d3ba5c726ccdaaa59d80}\label{class_widget_a928275b5f270d3ba5c726ccdaaa59d80}} 
+\index{Widget@{Widget}!tx01@{tx01}}
+\index{tx01@{tx01}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tx01}{tx01}}
+{\footnotesize\ttfamily int Widget\+::tx01}
+
+
+
+Definition at line 73 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_af2c61dbf6524715909c54b3904fcecf3}\label{class_widget_af2c61dbf6524715909c54b3904fcecf3}} 
+\index{Widget@{Widget}!tx02@{tx02}}
+\index{tx02@{tx02}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tx02}{tx02}}
+{\footnotesize\ttfamily int Widget\+::tx02}
+
+
+
+Definition at line 78 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a0bb67744755fd66fc961e09be5b81624}\label{class_widget_a0bb67744755fd66fc961e09be5b81624}} 
+\index{Widget@{Widget}!tx03@{tx03}}
+\index{tx03@{tx03}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tx03}{tx03}}
+{\footnotesize\ttfamily int Widget\+::tx03}
+
+
+
+Definition at line 79 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ab49de792246fcfa8425154858177d323}\label{class_widget_ab49de792246fcfa8425154858177d323}} 
+\index{Widget@{Widget}!tx12@{tx12}}
+\index{tx12@{tx12}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tx12}{tx12}}
+{\footnotesize\ttfamily int Widget\+::tx12}
+
+
+
+Definition at line 74 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ade47ac178990e8106fe34b765f8b99ab}\label{class_widget_ade47ac178990e8106fe34b765f8b99ab}} 
+\index{Widget@{Widget}!tx23@{tx23}}
+\index{tx23@{tx23}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tx23}{tx23}}
+{\footnotesize\ttfamily int Widget\+::tx23}
+
+
+
+Definition at line 75 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_af8d8bf3f40ce21a1ca2e59931319faa5}\label{class_widget_af8d8bf3f40ce21a1ca2e59931319faa5}} 
+\index{Widget@{Widget}!tx34@{tx34}}
+\index{tx34@{tx34}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tx34}{tx34}}
+{\footnotesize\ttfamily int Widget\+::tx34}
+
+
+
+Definition at line 76 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a931a79c8de87336d5ad20032fec6a3d8}\label{class_widget_a931a79c8de87336d5ad20032fec6a3d8}} 
+\index{Widget@{Widget}!Ty@{Ty}}
+\index{Ty@{Ty}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Ty}{Ty}}
+{\footnotesize\ttfamily int Widget\+::\+Ty}
+
+
+
+Definition at line 98 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a65e64a42912e5b705cee9fb30b852399}\label{class_widget_a65e64a42912e5b705cee9fb30b852399}} 
+\index{Widget@{Widget}!ty01@{ty01}}
+\index{ty01@{ty01}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ty01}{ty01}}
+{\footnotesize\ttfamily int Widget\+::ty01}
+
+
+
+Definition at line 81 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a7c66d2b69f78962428dc8bc54f1e2c95}\label{class_widget_a7c66d2b69f78962428dc8bc54f1e2c95}} 
+\index{Widget@{Widget}!ty02@{ty02}}
+\index{ty02@{ty02}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ty02}{ty02}}
+{\footnotesize\ttfamily int Widget\+::ty02}
+
+
+
+Definition at line 86 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a912859aab75b9a730b54f096e6e92b61}\label{class_widget_a912859aab75b9a730b54f096e6e92b61}} 
+\index{Widget@{Widget}!ty03@{ty03}}
+\index{ty03@{ty03}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ty03}{ty03}}
+{\footnotesize\ttfamily int Widget\+::ty03}
+
+
+
+Definition at line 87 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a666f806d3db015df0c1042bed89b6658}\label{class_widget_a666f806d3db015df0c1042bed89b6658}} 
+\index{Widget@{Widget}!ty12@{ty12}}
+\index{ty12@{ty12}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ty12}{ty12}}
+{\footnotesize\ttfamily int Widget\+::ty12}
+
+
+
+Definition at line 82 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a8e4636d5e4701d3259f5b287f5a9ac7b}\label{class_widget_a8e4636d5e4701d3259f5b287f5a9ac7b}} 
+\index{Widget@{Widget}!ty23@{ty23}}
+\index{ty23@{ty23}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ty23}{ty23}}
+{\footnotesize\ttfamily int Widget\+::ty23}
+
+
+
+Definition at line 83 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a1d56db61dd740b26cc74283c0deed649}\label{class_widget_a1d56db61dd740b26cc74283c0deed649}} 
+\index{Widget@{Widget}!ty34@{ty34}}
+\index{ty34@{ty34}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ty34}{ty34}}
+{\footnotesize\ttfamily int Widget\+::ty34}
+
+
+
+Definition at line 84 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ae056484c638a698ea15801b3d0743bad}\label{class_widget_ae056484c638a698ea15801b3d0743bad}} 
+\index{Widget@{Widget}!Tz@{Tz}}
+\index{Tz@{Tz}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Tz}{Tz}}
+{\footnotesize\ttfamily int Widget\+::\+Tz}
+
+
+
+Definition at line 99 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a130417b3184bd86a66c10f238ec9c28e}\label{class_widget_a130417b3184bd86a66c10f238ec9c28e}} 
+\index{Widget@{Widget}!tz01@{tz01}}
+\index{tz01@{tz01}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tz01}{tz01}}
+{\footnotesize\ttfamily int Widget\+::tz01}
+
+
+
+Definition at line 89 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ae90dce7bccabcf74230c12244a0136be}\label{class_widget_ae90dce7bccabcf74230c12244a0136be}} 
+\index{Widget@{Widget}!tz02@{tz02}}
+\index{tz02@{tz02}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tz02}{tz02}}
+{\footnotesize\ttfamily int Widget\+::tz02}
+
+
+
+Definition at line 94 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a93bfffc60dceec9d6d814ef2778e1859}\label{class_widget_a93bfffc60dceec9d6d814ef2778e1859}} 
+\index{Widget@{Widget}!tz03@{tz03}}
+\index{tz03@{tz03}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tz03}{tz03}}
+{\footnotesize\ttfamily int Widget\+::tz03}
+
+
+
+Definition at line 95 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_acfda52dbead00a05ce6c46f69eb658f7}\label{class_widget_acfda52dbead00a05ce6c46f69eb658f7}} 
+\index{Widget@{Widget}!tz12@{tz12}}
+\index{tz12@{tz12}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tz12}{tz12}}
+{\footnotesize\ttfamily int Widget\+::tz12}
+
+
+
+Definition at line 90 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ac6d993886b08bf4cebdce2a24911f731}\label{class_widget_ac6d993886b08bf4cebdce2a24911f731}} 
+\index{Widget@{Widget}!tz23@{tz23}}
+\index{tz23@{tz23}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tz23}{tz23}}
+{\footnotesize\ttfamily int Widget\+::tz23}
+
+
+
+Definition at line 91 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a9baed9f1674f550031703d841b97b174}\label{class_widget_a9baed9f1674f550031703d841b97b174}} 
+\index{Widget@{Widget}!tz34@{tz34}}
+\index{tz34@{tz34}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{tz34}{tz34}}
+{\footnotesize\ttfamily int Widget\+::tz34}
+
+
+
+Definition at line 92 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}\label{class_widget_a19c48cc897c43aa2e995fce9f7fb2418}} 
+\index{Widget@{Widget}!ui@{ui}}
+\index{ui@{ui}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily Ui\+::\+Widget$\ast$ Widget\+::ui}
+
+
+
+Definition at line 40 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a7fedee607dd2a3910a211ca82ed8b980}\label{class_widget_a7fedee607dd2a3910a211ca82ed8b980}} 
+\index{Widget@{Widget}!value@{value}}
+\index{value@{value}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{value}{value}}
+{\footnotesize\ttfamily Q\+String Widget\+::value}
+
+
+
+Definition at line 69 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a592b9f4e9fbda68e255a22479777f766}\label{class_widget_a592b9f4e9fbda68e255a22479777f766}} 
+\index{Widget@{Widget}!Write@{Write}}
+\index{Write@{Write}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{Write}{Write}}
+{\footnotesize\ttfamily std\+::vector$<$Q\+Point$>$ Widget\+::\+Write}
+
+
+
+Definition at line 104 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_ac0d3617e3a774edf9f4ea1494b5f2251}\label{class_widget_ac0d3617e3a774edf9f4ea1494b5f2251}} 
+\index{Widget@{Widget}!x1@{x1}}
+\index{x1@{x1}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{x1}{x1}}
+{\footnotesize\ttfamily float Widget\+::x1}
+
+
+
+Definition at line 101 of file widget.\+h.
+
+\mbox{\Hypertarget{class_widget_a9d28e7ab9323457639ae7f02be44676f}\label{class_widget_a9d28e7ab9323457639ae7f02be44676f}} 
+\index{Widget@{Widget}!y1@{y1}}
+\index{y1@{y1}!Widget@{Widget}}
+\doxysubsubsection{\texorpdfstring{y1}{y1}}
+{\footnotesize\ttfamily float Widget\+::y1}
+
+
+
+Definition at line 102 of file widget.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{widget_8h}{widget.\+h}}\item 
+\mbox{\hyperlink{widget_8cpp}{widget.\+cpp}}\end{DoxyCompactItemize}
